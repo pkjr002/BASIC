@@ -1,0 +1,70 @@
+
+# css ---------------------------------------------------------------
+<style>
+    .myPara     {font-size: 12pt; color: blue; font-family: 'Times New Roman';}
+    .hl         {background-color: yellow;}
+    .imp        {font-family: 'Times New Roman'; color:red; font-weight: bold; font-style: italic;}
+    .boxed      {border: 2px solid black; padding: 1px;}
+    .bulet li   {font-family: 'Times New Roman'; color:black; font-style: italic; font-size: 12pt;}
+</style>
+# usage
+<p class="myPara">dum</p>
+
+# Gen ---------------------------------------------------------------
+Space &nbsp;
+Linebreak <br>
+Bold <b>
+
+# highlight ---------------------------------------------------------------
+<span style="padding-left: 50px;">dum</span>
+
+# Font ---------------------------------------------------------------
+<span style="font-size: 12pt; color: blue; font-family: 'Times New Roman'";>.  </span>
+
+# Lists---------------------------------------------------------------
+<ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ol>
+
+# ---------------------------------------------------------------
+<div style="border: 5px solid blue; padding: 20px;">
+<span style="font-family: 'Arial';">
+    <span style="color: 008000;"> TEXT_HERE  
+	    <a href="https://strong></a> 
+    </span>.
+</span>
+---
+</div>
+
+
+# ---------------------------------------------------------------
+<style>
+    .myPara     {font-size: 12pt; color: blue; font-family: 'Comic Sans MS';}
+    .highlight  {background-color: yellow;}
+    .imp        {font-family: 'Times New Roman'; color:red; font-weight: bold; font-style: italic;}
+    .boxed      {border: 2px solid black; padding: 5px;}
+
+</style>
+
+<p class="myPara"> 
+    <span class="highlight"> 
+        This is the data that gets used for the 
+        <span class="imp">InSAR module</span> 
+        and running SLURM.
+    </span>
+</p>
+
+
+
+
+# ---------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    Content goes here.
+</body>
+</html>
