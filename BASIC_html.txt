@@ -15,6 +15,9 @@ Space &nbsp;
 Linebreak <br>
 Bold <b>
 
+# horizontal line ---------------------------------------------------------------
+<hr style="border: none; height: 2px; background-color: none; border-style: dotted;">
+
 # highlight ---------------------------------------------------------------
 <span style="padding-left: 50px;">dum</span>
 
