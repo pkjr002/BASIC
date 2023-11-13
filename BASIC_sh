@@ -1,0 +1,9 @@
+sudo chmod 755 /Users/dota
+This command changes the permissions of the directory so that:
+
+The owner of the directory has read, write, and execute permissions (7).
+Members of the directory's group have read and execute permissions (5).
+Other users have read and execute permissions (5).
+
+
+ls -ld /Users/dota
