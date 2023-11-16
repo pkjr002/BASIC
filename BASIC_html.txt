@@ -10,22 +10,28 @@
 # usage
 <p class="myPara">dum</p>
 
+
 # Gen ---------------------------------------------------------------
 Space &nbsp;
 Linebreak <br>
 Bold <b>
 
+
 # horizontal line ---------------------------------------------------------------
 <hr style="border: none; height: 2px; background-color: none; border-style: dotted;">
+
 
 # highlight ---------------------------------------------------------------
 <span style="background-color: yellow;">dum</span>
 
+
 # highlight line---------------------------------------------------------------
 <span style="font-size: 14pt; color: blue; font-family: 'Times New Roman'; background-color: yellow;"> dum </span>
 
+
 # Font ---------------------------------------------------------------
 <span style="font-size: 12pt; color: blue; font-family: 'Times New Roman';">.  </span>
+<span style="font-style: italic;">  </span>
 
 # Lists---------------------------------------------------------------
 <ol>
@@ -33,11 +39,16 @@ Bold <b>
     <li>Item 2</li>
 </ol>
 
-# ---------------------------------------------------------------
+
+# Hyperlink------------------------------------------------------------
+<a href="https://www.eg.com">LINK</a>
+
+
+# Boxed Hyperlink------------------------------------------------------
 <div style="border: 5px solid blue; padding: 20px;">
 <span style="font-family: 'Arial';">
     <span style="color: 008000;"> TEXT_HERE  
-	    <a href="https://strong></a> 
+	    <a href="https://www.eg.com">LINK</a> 
     </span>.
 </span>
 ---
