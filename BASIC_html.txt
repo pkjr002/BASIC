@@ -23,11 +23,10 @@ Bold <b>
 
 # highlight ---------------------------------------------------------------
 <span style="background-color: yellow;">dum</span>
-
-
-# highlight line---------------------------------------------------------------
 <span style="font-size: 14pt; color: blue; font-family: 'Times New Roman'; background-color: yellow;"> dum </span>
 
+# highlight line-break-----------------------------------------------------
+<hr style="border: none; height: 4px; background-color: yellow; border-style: dotted;">
 
 # Font ---------------------------------------------------------------
 <span style="font-size: 12pt; color: blue; font-family: 'Times New Roman';">.  </span>
