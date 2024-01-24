@@ -1,5 +1,84 @@
-git config --global user.name
-git config --global user.email
+# Basic Install
+STEP 1-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+>Check if git is installed 
+$ git --version
+
+>Install by 
+$ sudo apt install git-all
+
+STEP 2-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+>Check for git user name and the email $ git config –list --show-origin
+*** if the above does not show an o/p, you need to set the --global git name and email.
+$ git config --global user.email "ename@gmail.com"
+$ git config --global user.name "ename"
+
+* note that its will be beneficial to have your own email, so if you witch companies you will still have access to git/gitHUB
+
+STEP 3-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+>Setting up the SSH keys
+$ ssh-keygen -t ed25519 -C ename@gmail.com
+
+NOTE: location/name/passwd option
+Enter file in which to save the key (/home/ename/.ssh/id_ed25519): /home/ename/.ssh/id_wahab      
+Enter passphrase (empty for no passphrase):
+
+STEP 4-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+>Run the SSH agent (think of it as a wallet that holds your keys)
+$ ssh-agent -s
+*** check the shell $ echo$SHELL
+If in the tcsh, then use $ eval `ssh-agent -c`
+
+>To check the agent
+$ echo $SSH_AUTH_SOCK
+$ echo $SSH_AGENT_PID
+
+STEP 5-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+Link the the key to the agent.
+>Check if the config file exists $ ls ~/.ssh/config
+*** if no file exists, we need to create one. 
+$ touch ~/.ssh/config
+Check if the file is created $ ls ~/.ssh/config
+
+STEP 6-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+> Add private key to the SSH agent
+Next add the keys to the config file. 
+$ vim ~/.ssh/config
+> Add the following
+Host github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_wahab
+
+STEP 7-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+Add the key to the SSH agent
+$ ssh-add ~/.ssh/id_wahab
+
+STEP 8-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+Add the public key to the gitHUB
+Go to setting on gitHUB --> SSH and GPG keys
+Add the public key here 
+
+The public key can be found by
+$ cat ~/.ssh/id_wahab.pub
+
+This should link cluster git to gitHUB
+-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+# Danger
+$ git filter-branch --index-filter \
+    'git rm --cached --ignore-unmatch path/to/mylarge_50mb_file' \
+    --tag-name-filter cat -- --all
+
+# WARNING Clean the dir of untracked. (Removes all files from the folder that are not tracked)
+git clean -xdf
+-x removes ignored files, -d removes untracked folders, -f removes untracked files.
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+
+
+
 
 # Copy Particular folder and its files in branch A to be moved to branch B
 -> Go to the desired branch, in this case branchB. 
