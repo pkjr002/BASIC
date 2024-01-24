@@ -28,6 +28,17 @@ Bold <b>
 # highlight line-break-----------------------------------------------------
 <hr style="border: none; height: 4px; background-color: yellow; border-style: dotted;">
 
+# Half-line center-----------------------------------------------------------------------
+<div style="width: 50%; margin: auto;">
+    <hr style="border: none; height: 2px; background-color: yellow; border-style: dotted;">
+</div>
+
+# Half-line left start-----------------------------------------------------------------------
+<div style="position: relative; width: 100%;">
+    <hr style="position: absolute; left: 0; width: 50%; border: none; height: 2px; background-color: yellow; border-style: dotted;">
+</div>
+
+
 # Font ---------------------------------------------------------------
 <span style="font-size: 12pt; color: blue; font-family: 'Times New Roman';">.  </span>
 <span style="font-style: italic;">  </span>
