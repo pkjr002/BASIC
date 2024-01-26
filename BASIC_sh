@@ -1,3 +1,17 @@
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+zsh shell
+echo $SHELL
+echo $HOST
+echo $USER
+
+uname -a
+env
+date
+
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
 sudo chmod 755 /Users/dota
 This command changes the permissions of the directory so that:
 
