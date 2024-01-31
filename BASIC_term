@@ -1,0 +1,34 @@
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+zsh
+
+# Color and style codes
+BOLD='%B'
+RESET='%f%b'
+DIR_COLOR='%F{blue}' # Blue for directories
+FILE_COLOR='%F{green}' # Green for regular files
+
+# Set LS_COLORS for ls and other commands in a Zsh-compatible way
+export LS_COLORS="di=$BOLD$DIR_COLOR:fi=$FILE_COLOR"
+
+# Define additional color and style codes
+RED='%F{red}'
+GREEN='%F{green}'
+YELLOW='%F{yellow}'
+
+# Function to get Git branch
+git_branch() {
+  local branch=$(git branch 2>/dev/null | sed -n '/\* /s///p')
+  if [ -n "$branch" ]; then
+    echo "($branch)"
+  fi
+}
+
+
+# Set your bold colored prompt with Git branch in parentheses for Zsh
+autoload -U add-zsh-hook
+add-zsh-hook precmd update_ps1
+
+update_ps1() {
+    PS1="${BOLD}${RED}==> ${GREEN}%1~ ${YELLOW}$(git_branch) $ ${RESET}"
+}
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
