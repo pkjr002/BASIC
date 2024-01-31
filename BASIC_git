@@ -7,12 +7,14 @@ $ git --version
 $ sudo apt install git-all
 
 STEP 2-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
->Check for git user name and the email $ git config –list --show-origin
+>Check for git user name and the email $ git config --list --show-origin
 *** if the above does not show an o/p, you need to set the --global git name and email.
 $ git config --global user.email "ename@gmail.com"
 $ git config --global user.name "ename"
 
 * note that its will be beneficial to have your own email, so if you witch companies you will still have access to git/gitHUB
+
+git remote -v
 
 STEP 3-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 >Setting up the SSH keys
@@ -27,6 +29,7 @@ STEP 4-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 $ ssh-agent -s
 *** check the shell $ echo$SHELL
 If in the tcsh, then use $ eval `ssh-agent -c`
+If in the zsh, then use $ eval "$(ssh-agent -s)".
 
 >To check the agent
 $ echo $SSH_AUTH_SOCK
