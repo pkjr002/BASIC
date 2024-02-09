@@ -53,12 +53,20 @@ $ conda activate base
 $ conda deactivate 
 
 #Create env
-$ conda create --name <my-env>;  conda create -n myenv python=3.9
+$ conda create -n myenv python=3.9;  conda create --name <my-env>;  
 #Specifying a location for an environment
 $ conda create --prefix ./envs jupyterlab=3.2 matplotlib=3.5 numpy=1.21
 
 #Create the environment from the environment.yml file:
 $ conda env create -f environment.yml
+
+$ conda env remove --name venv
+
+#-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#JUPYTER env
+$ pip install ipykernel   
+$ python -m ipykernel install --user --name=plot_M2 
+
 
 
 
