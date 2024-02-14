@@ -1,5 +1,5 @@
 # VS code appearence.
-## In the settings.json add the following
+In the settings.json add the following
 ```
 {
     "workbench.colorTheme": "Visual Studio Light",
@@ -24,12 +24,10 @@ Host github.com
 ```
 
 # Install Miniconda
-```
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm -rf ~/miniconda3/miniconda.sh
-```
+```mkdir -p ~/miniconda3```
+```wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh```
+```bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3```
+```rm -rf ~/miniconda3/miniconda.sh```
 Note: epending on which shell, initialize as 
 ```
 ~/miniconda3/bin/conda init bash
