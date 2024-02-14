@@ -7,20 +7,20 @@ Install by
 ```$ sudo apt install git-all```
 
 ## Check for git user name and the email 
-```$ git config --list --show-origin```
-*** if the above does not show an o/p, you need to set the --global git name and email.
+```$ git config --list --show-origin```  
+* if the above does not show an o/p, you need to set the --global git name and email.  
 ```
 $ git config --global user.email "ename@gmail.com"
 $ git config --global user.name "ename"
-```
-* note that its will be beneficial to have your own email, so if you witch companies you will still have access to git/gitHUB
+```  
+* NOTE that its will be beneficial to have your own email, so if you witch companies you will still have access to git/gitHUB
 
 ## Pull/push to
 ```$ git remote -v```
 
 ## STEP 3
 Setting up the SSH keys
-```$ ssh-keygen -t ed25519 -C ename@gmail.com```
+```$ ssh-keygen -t ed25519 -C ename@gmail.com```  
 ```
 NOTE: location/name/passwd option
 Enter file in which to save the key (/home/ename/.ssh/id_ed25519): /home/ename/.ssh/id_wahab      
@@ -28,11 +28,11 @@ Enter passphrase (empty for no passphrase):
 ```
 
 ## STEP 4: Run the SSH agent 
-think of it as like a digital wallet that holds your keys
-```$ ssh-agent -s```
-*** check the shell ```$ echo$SHELL```
-If in the tcsh, then use ```$ eval `ssh-agent -c` ```
-If in the zsh, then use ```$ eval "$(ssh-agent -s)".```
+think of it as like a digital wallet that holds your keys  
+```$ ssh-agent -s```  
+* check the shell ```$ echo$SHELL```  
+If in the tcsh, then use ```$ eval `ssh-agent -c` ```  
+If in the zsh, then use ```$ eval "$(ssh-agent -s)".```  
 
 #### To check the agent
 ```
@@ -41,15 +41,15 @@ $ echo $SSH_AGENT_PID
 ```
 
 ## STEP 5: Link the the key to the agent
-Check if the config file exists 
+Check if the config file exists  
 ```$ ls ~/.ssh/config```
-*** if no file exists, we need to create one. 
-```$ touch ~/.ssh/config```
+*** if no file exists, we need to create one.   
+```$ touch ~/.ssh/config```  
 Check if the file is created ```$ ls ~/.ssh/config```
 
 ## STEP 6: Add private key to the SSH agent
-Next add the keys to the config file. 
-```$ vim ~/.ssh/config```
+Next add the keys to the config file.   
+```$ vim ~/.ssh/config```  
 
 Add the following
 ```
