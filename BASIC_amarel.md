@@ -1,4 +1,4 @@
-# VS code appearence.
+# VS code appearance.
 In the settings.json add the following
 ```
 {
