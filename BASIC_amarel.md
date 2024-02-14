@@ -10,7 +10,7 @@
     "terminal.integrated.fontSize": 14
 }
 ```
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
 # Specify SSH details on local
 In the ```~/.ssh/config``` file (if it doesnot exist, create it) add the following
 ```
@@ -23,7 +23,6 @@ Host github.com
   IdentityFile ~/.ssh/id_
 ```
 
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 # Install Miniconda
 ```
 mkdir -p ~/miniconda3
@@ -51,32 +50,30 @@ If miniconda is not listed, then add it to the *rc. First check your shell
 add ```export PATH=~/miniconda3/bin:$PATH``` to your shell
 refresh the terminal ```source ~/.*rc```
 
-#-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-#Conda Environments (env)
+
+# Conda Environments (env)
 $ conda env list
 
 $ conda activate base
 $ conda deactivate 
 
-#Create env
+# Create env
 $ conda create -n myenv python=3.9;  conda create --name <my-env>;  
 #Specifying a location for an environment
 $ conda create --prefix ./envs jupyterlab=3.2 matplotlib=3.5 numpy=1.21
 
-#Create the environment from the environment.yml file:
+# Create the environment from the environment.yml file:
 $ conda env create -f environment.yml
 
 $ conda env remove --name venv
 
-#-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-#JUPYTER env
+
+# JUPYTER env
 $ pip install ipykernel   
 $ python -m ipykernel install --user --name=plot_M2 
 
 
 
-
-#-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 other Plugins
 jupyter notebook
 git lense
@@ -84,7 +81,7 @@ git lense
 
 
 
-#-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-#Server specific
+
+# HPC generic
 scontrol show node
 sinfo
