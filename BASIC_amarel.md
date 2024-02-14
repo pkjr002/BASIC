@@ -25,62 +25,66 @@ Host github.com
 
 # Install Miniconda
 ```
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm -rf ~/miniconda3/miniconda.sh
+$ mkdir -p ~/miniconda3
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+$ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+$ rm -rf ~/miniconda3/miniconda.sh
 ```
-Note: epending on which shell, initialize as 
+
+Note: Depending on which shell, initialize as 
 ```
-~/miniconda3/bin/conda init bash
-~/miniconda3/bin/conda init zsh
-~/miniconda3/bin/conda init tcsh
+$ ~/miniconda3/bin/conda init bash
+$ ~/miniconda3/bin/conda init zsh
+$ ~/miniconda3/bin/conda init tcsh
 ```
+
 Check the install by typing
 ```
 conda --version
 conda list
 ```
-Check conda path 
-```
-echo $PATH
-```
+
+## OPT:Check conda path 
+```echo $PATH```
+
 If miniconda is not listed, then add it to the *rc. First check your shell 
 ```$ echo $SHELL```
-add ```export PATH=~/miniconda3/bin:$PATH``` to your shell
+add ```export PATH=~/miniconda3/bin:$PATH``` to your shell 
+```$ echo -e '\nexport PATH=~/miniconda3/bin:$PATH' >> ~/.zshrc```
 refresh the terminal ```source ~/.*rc```
 
 
 # Conda Environments (env)
-$ conda env list
+Check your env ```$ conda env list```
 
-$ conda activate base
-$ conda deactivate 
+Activate base env ```$ conda activate base```
+Dectivate ```$ conda deactivate ```
 
-# Create env
-$ conda create -n myenv python=3.9;  conda create --name <my-env>;  
-#Specifying a location for an environment
-$ conda create --prefix ./envs jupyterlab=3.2 matplotlib=3.5 numpy=1.21
+## Create a conda env
+```
+$ conda create -n <my-env> python=3.9;     # specific py versionm 
+$ conda create --name <my-env>
+```
 
-# Create the environment from the environment.yml file:
-$ conda env create -f environment.yml
+## Specifying a location for an environment
+```$ conda create --prefix ./envs jupyterlab=3.2 matplotlib=3.5 numpy=1.21```
 
-$ conda env remove --name venv
+## Create the environment from the ```environment.yml``` file:
+```$ conda env create -f environment.yml```
+
+## Remove env
+```$ conda env remove --name venv```
 
 
-# JUPYTER env
+# Add the conda env to JUPYTER
+```
 $ pip install ipykernel   
-$ python -m ipykernel install --user --name=plot_M2 
+$ python -m ipykernel install --user --name=<env name> 
+```
 
-
-
-other Plugins
+# Plugins for VS code
 jupyter notebook
 git lense
-
-
-
-
 
 # HPC generic
 scontrol show node
