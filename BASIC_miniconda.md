@@ -77,7 +77,12 @@ $ conda create --name <my-env>
 $ conda create --prefix ./envs jupyterlab=3.2 matplotlib=3.5 numpy=1.21
 ```
 
-## Create the environment from the `environment.yml` file:
+##  Freeze a Conda environment 
+Activate the Conda environment `conda activate myenv`
+```
+$ conda env export > environment.yml
+```
+# Create the environment from the `environment.yml`
 ```
 $ conda env create -f environment.yml
 ```
