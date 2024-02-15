@@ -1,7 +1,0 @@
-To stop auto activating env 
-edit ~/.condarc
-auto_activate_base: false
-
-
-Code
-cmd+Shift+P ==. Open User Settings (JSON)
