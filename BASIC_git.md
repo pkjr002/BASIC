@@ -4,6 +4,7 @@
 ```
 $ git --version
 ```
+If you get an output e.g. `git version 1.8.3.1` skip to STEP 2
 
 #### Install git by 
 ```
