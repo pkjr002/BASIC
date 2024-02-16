@@ -13,7 +13,7 @@ $ sudo apt install git-all
 
 ## STEP 2: Check for git user name and the email 
 ```
-$ git config --list --show-origin
+$ git config --list 
 ```  
 If the above does not show an o/p, you need to set the `--global`  git  `name` and `email`.  
 ```
