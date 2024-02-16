@@ -1,52 +1,68 @@
-# GIT Basic Install
+# `GIT`: Install | `gitHUB`: Commands
+<br>  
 
-## STEP 1: check if git is installed 
+> **Author:** praveen.kumar@rutgers.edu  
+> **Date:** 2024-02-16   
+> **Needs:** VS code
+
+<br>
+
+## 1) Check if `git` is installed 
 ```
 $ git --version
 ```
-If you get an output e.g. `git version 1.8.3.1` skip to STEP 2
+If you get an output e.g. `git version X.X.X.X` skip to **[2]()**  
+<br>
 
-#### Install git by 
+- **ONLY** if you need to install git
 ```
 $ sudo apt install git-all
 ```
 
-## STEP 2: Check for git user name and the email 
+<br><br>
+## 2: Configure `git` <u>user.name</u> & <u>*email*</u>
+
+To check `git` user.name and email associated with the current session
 ```
 $ git config --list 
 ```  
-If the above does not show an o/p, you need to set the `--global`  git  `name` and `email`.  
+If the above does not show an output, then you need to set the `--global`  git  `user.name` and `email`.  
 ```
 $ git config --global user.email "ename@gmail.com"
 $ git config --global user.name "ename"
 ```  
-- **NOTE** that its will be beneficial to have your own email, so if you switch uni you will still have access to gitHUB
+- **NOTE** that it will be beneficial to have your own email, so if you switch uni you will still have access to gitHUB  
 
-#### Pull/push to
-```
-$ git remote -v
-```
 
-## STEP 3: Setting up the SSH keys
+## 3: Connect `git` to `gitHUB`
+> :bulb: `Ctrl+C`  cancel the current command in the terminal.  
+
+### 3.1: Generate a SSH key pair using the Ed25519 algorithm
 ```
 $ ssh-keygen -t ed25519 -C ename@gmail.com
 ```
 
-NOTE: location/name/passwd option
-Enter file in which to save the key (/home/ename/.ssh/id_ed25519): /home/ename/.ssh/id_wahab      
-Enter passphrase (empty for no passphrase):
+When you generate the `SSH key pair` by run the command above, **note** that the output will be like:  
+
+>> Generating public/private ed25519 key pair.  
+>> Enter file in which to save the key (/Users/uname/.ssh/id_ed25519): /Users/<uname>/.ssh/id_SOMEname  
+>> Enter passphrase (empty for no passphrase):  <skip for tutorial>   
+>> Enter passphrase (empty for no passphrase):  <skip for tutorial>   
 
 
-## STEP 4: Run the SSH agent 
-think of it as like a digital wallet that holds your keys  
+### 3.2: Run the SSH agent 
+*Think of it as like a digital wallet that holds your keys*  
 ```
 $ ssh-agent -s
 ```  
-Check the shell `$ echo$SHELL`  
+Before running the command below check your shell using `$ echo$SHELL`. Depending on your output use <u>**one**</u> of the below:  
 ```
+$ eval $(ssh-agent -s)        # if in the bash/sh
 $ eval `ssh-agent -c`         # if in the tcsh
 $ eval "$(ssh-agent -s)"      # if in the zsh
 ```
+(EDIT from here)
+
 
 #### To check the agent
 ```
@@ -118,6 +134,11 @@ git add <new-folder-name>
 git commit -m "Move and rename folder from Branch A to Branch B"
 git rm -r <path-to-folder>    # Use -r if it's a folder
 git commit -m "Remove original folder from Branch A"
+```
+
+#### Pull/push to
+```
+$ git remote -v
 ```
 
 ### Reset main to origin-main (Keep up with ORIGIN/main on local/main)
