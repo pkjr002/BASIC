@@ -1,4 +1,4 @@
-# `GIT`: Install | `gitHUB`: Commands
+# `GIT`: Install | `GitHub`: Commands
 <br>  
 
 > **Author:** praveen.kumar@rutgers.edu  
@@ -26,18 +26,21 @@ To check `git` user.name and email associated with the current session
 ```
 $ git config --list 
 ```  
-If the above does not show an output, then you need to set the `--global`  git  `user.name` and `email`.  
+If the above **does not** show an output, then you need to set the `--global`  git  `user.name` and `email`. Use commands below. 
 ```
 $ git config --global user.email "ename@gmail.com"
 $ git config --global user.name "ename"
 ```  
-- **NOTE** that it will be beneficial to have your own email, so if you switch uni you will still have access to gitHUB  
+- **NOTE** that it will be beneficial to have your own email, so if you switch uni you will still have access to GitHub  
 
 
-## 3: Connect `git` to `gitHUB`
+## 3: Connect `git` to `GitHub`
 > :bulb: `Ctrl+C`  cancel the current command in the terminal.  
 
+<br>
+
 ### 3.1: Generate a SSH key pair using the Ed25519 algorithm
+*Before entering command below, read the following lines on expected output.* 
 ```
 $ ssh-keygen -t ed25519 -C ename@gmail.com
 ```
@@ -45,66 +48,98 @@ $ ssh-keygen -t ed25519 -C ename@gmail.com
 When you generate the `SSH key pair` by run the command above, **note** that the output will be like:  
 
 >> Generating public/private ed25519 key pair.  
->> Enter file in which to save the key (/Users/uname/.ssh/id_ed25519): /Users/<uname>/.ssh/id_SOMEname  
+>> Enter file in which to save the key (/Users/uname/.ssh/id_ed25519): /Users/<uname>/.ssh/id_testKEY  
 >> Enter passphrase (empty for no passphrase):  <skip for tutorial>   
 >> Enter passphrase (empty for no passphrase):  <skip for tutorial>   
 
+After hitting `Enter` key twice the output <u>**should**</u> look like 
 
-### 3.2: Run the SSH agent 
-*Think of it as like a digital wallet that holds your keys*  
+>> Your identification has been saved in /Users/<uname>/.ssh/id_testKEY  
+>> Your public key has been saved in /Users/<uname>/.ssh/id_testKEY.pub  
+>> The key fingerprint is:  
+>> SHA256:xxxxxxxxx ename@gmail.com  
+>> The key's randomart image is:  
+>> *There will be a cool Image key generated here*
+
+Remember that all this is being stored in `/Users/<uname>/.ssh/` if you need to access/delete generated keys.
+
+
+
+<br>
+
+### 3.2: Invoke the SSH agent  
 ```
 $ ssh-agent -s
 ```  
-Before running the command below check your shell using `$ echo$SHELL`. Depending on your output use <u>**one**</u> of the below:  
+Before running the command **below** check your shell using `$ echo $SHELL`.   
+Depending on your output use <u>**one**</u> of the below:  
 ```
 $ eval $(ssh-agent -s)        # if in the bash/sh
 $ eval `ssh-agent -c`         # if in the tcsh
 $ eval "$(ssh-agent -s)"      # if in the zsh
 ```
-(EDIT from here)
 
+<br>
 
-#### To check the agent
+### 3.3: Check if the SSH agent is running.
 ```
 $ echo $SSH_AUTH_SOCK
+```
+Output should be of the sort  `/tmp/ssh-rfS3xzyTnhAa/agent.1769`  
+*Location will be different for you*
+
+```
 $ echo $SSH_AGENT_PID
 ```
+Output should be an integer (e.g. 1234)
 
-## STEP 5: Link the the key to the agent
-Check if the config file exists  
-```
-$ ls ~/.ssh/config
-```
-If no file exists, we need to create one (`$ touch ~/.ssh/config`)  
-Check if the file is created (`$ ls ~/.ssh/config`)
+<br>
 
-## STEP 6: Add the private key to the config file
-Open the config file
+### 3.4: Add the SSH key to the SSH agent
 ```
-$ code ~/.ssh/config
+$ ssh-add ~/.ssh/id_testKEY
 ```  
 
-And add the following
+
+
+ 
+### 3.5: OPTIONAL     
+By making additions to the config file located at `~/.ssh/config`, the explicit use of `$ ssh-add ~/.ssh/id_testKEY` becomes unnecessary for daily operations, provided you connect to GitHub at least once after starting the agent. If your SSH agent is running, the client automatically adds the `~/.ssh/id_testKEY` to the agent is the additions to the config file are made.This setup offers a more streamlined and secure workflow, especially if you're using passphrase-protected SSH keys.
+
+<br>
+
+First check if `config` file exists use `$ ls ~/.ssh/config`  
+- If there is no terminal output, `config` file <u>does not</u> exists and we need to create one.   
+Use `$ touch ~/.ssh/config`  
+
+<br>
+
+Copy/Paste the following to the `~/.ssh/config` file. 
 ```
 Host github.com
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_wahab
+  IdentityFile ~/.ssh/id_testKEY
 ```
 
-## STEP 7: Add the key to the SSH agent
-```
-$ ssh-add ~/.ssh/id_wahab
-```
+If you are using VScode, you can open the config file by `$ code ~/.ssh/config`. *For this to work, your path variable should be configured.*
+Additionally, you can also use `vi` editor. Here is a list of [vi commands](https://www.cs.colostate.edu/helpdocs/vi.html).  s  
 
-## STEP 8: Add the public key to the gitHUB
-Go to setting on gitHUB --> SSH and GPG keys
-Add the public key here 
+<br>
+
+## 4: Add the public key to the GitHub
+In `Settings` option on GitHub.com open [SSH and GPG keys.](https://github.com/settings/keys)  
+Add the public key here.   
 
 The public key can be found by
 ```
-$ cat ~/.ssh/id_wahab.pub
+$ cat ~/.ssh/id_testKEY.pub
 ```
-### **This should link cluster git to gitHUB**
+
+Copy and paete the terminal output of the above to the GitHub [SSH and GPG keys.](https://github.com/settings/keys)  
+
+> :bulb: GitHub also provides a detailed guide for [Adding public key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 
+
+This should link local to remote GitHub
 
 ---
 
@@ -163,7 +198,7 @@ $ git merge main
 $ git push
 ```
 
-### Push your changes to gitHUB (to origin )
+### Push your changes to GitHub (to origin )
 ```
 $ git push origin main
 $ git push -u origin <branch>
