@@ -1,20 +1,26 @@
-# `GIT`: Install | `GitHub`: Commands
-<br>  
+# `GIT`    *&*    `GitHub`
 
-> **Author:** praveen.kumar@rutgers.edu  
+> **Author:** pkjr002@gmail.com    
 > **Date:** 2024-02-16   
 > **Needs:** VS code
 
 <br>
 
-## 1) Check if `git` is installed 
+### Note:: `1 to 4` describe linking your `GitHUB` (online) to your local `git`. 
+
+<br>
+
+
+## 1: Install and configure `git`
+
+###  Check if `git` is installed 
 ```
 $ git --version
 ```
 If you get an output e.g. `git version X.X.X.X` skip to **[2]()**  
 <br>
 
-- **ONLY** if you need to install git
+- Do this **ONLY** if you need to install git
 ```
 $ sudo apt install git-all
 ```
@@ -22,7 +28,7 @@ $ sudo apt install git-all
 <br><br>
 ## 2: Configure `git` <u>user.name</u> & <u>*email*</u>
 
-To check `git` user.name and email associated with the current session
+To check the `git` user.name and email associated with the current session
 ```
 $ git config --list 
 ```  
