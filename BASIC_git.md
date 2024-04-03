@@ -177,10 +177,32 @@ git rm -r <path-to-folder>    # Use -r if it's a folder
 git commit -m "Remove original folder from Branch A"
 ```
 
-#### Pull/push to
+#### List the configured remote repositories
 ```
 $ git remote -v
 ```
+
+#### Identifying the Protocol from the URL
+HTTPS URL
+```
+origin  https://github.com/username/repository.git (fetch)
+origin  https://github.com/username/repository.git (push)
+```
+SSH URL
+```
+origin  git@github.com:username/repository.git (fetch)
+origin  git@github.com:username/repository.git (push)
+```
+
+####  Switching Between HTTPS and SSH
+To switch to HTTPS 
+```
+git remote set-url origin https://github.com/username/repository.git
+```  
+To switch to SSH 
+```
+git remote set-url origin git@github.com:username/repository.git
+```  
 
 ### Reset main to origin-main (Keep up with ORIGIN/main on local/main)
 ```
