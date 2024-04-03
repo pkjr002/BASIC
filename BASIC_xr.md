@@ -22,3 +22,14 @@ def extract_nc_info(nc_path, stn, unit, yrST=None, yrEN=None):
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }
 ```
+
+### Open *.nc file 
+```
+path2file=f'.nc'
+nc_data = xr.open_dataset(path2file, engine='netcdf4')
+```
+- **NOTE** if the time axis is not formatted use instead
+```
+nc_data = xr.open_dataset(path2file, engine='netcdf4', decode_times=False)
+print(nc_data['time'])
+```
