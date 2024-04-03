@@ -26,7 +26,14 @@ In the settings.json add the following
     "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
     "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 14
+    "terminal.integrated.fontSize": 15,
+    "notebook.lineNumbers": "on",
+    "jupyter.askForKernelRestart": false,
+    "workbench.editor.enablePreview": false,
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "workbench.list.openMode": "doubleClick",
 }
 ```
 
