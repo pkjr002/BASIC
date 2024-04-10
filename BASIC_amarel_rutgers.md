@@ -20,3 +20,9 @@ scp unme001@amarel.rutgers.edu:/home/unme001/file_1.txt .
 ```
 tar -czf my_dir.tar.gz my_dir
 ```
+
+## Load python 
+```
+module use /projects/community/modulefiles
+module load anaconda
+```
