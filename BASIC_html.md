@@ -110,3 +110,10 @@ Red Arrow `<p style="font-size: 32px; color: red;">&#10145;</p>`
 </body>
 </html>
 ```
+
+# Titles
+<blockquote style="font-size: 18px; line-height: 2;">
+  <strong>Title:</strong> Get, Xplore & plot <br>
+  <strong>Author:</strong> Johane Doe <br>
+  <strong>Date:</strong> 2024.04.~<br>
+</blockquote>
