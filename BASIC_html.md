@@ -5,7 +5,9 @@
 # General
 ### Font 
 ```
-<span style="font-size: 12pt; color: blue; font-family: 'Times New Roman';">.      </span>  
+<span style="font-size: 12pt; font-family: 'Times New Roman'; color: blue; ">.      </span>  
+<span style="font-size:14pt; font-family:Georgia, serif;color:black;  font-style:italic"> .</span>  
+<span style="font-size:14pt; font-family:'Courier New', monospace; color:black"> <b>Background::</b> <br>
 ```
 <br>
 
