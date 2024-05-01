@@ -147,6 +147,26 @@ Copy and paete the terminal output of the above to the GitHub [SSH and GPG keys.
 
 This should link local to remote GitHub
 
+
+## Additionally if you are setting this up on HPC
+... make sure to add a file `start-agent.sh` to invoke the `ssh` agent
+```
+touch ~/.start-agent.sh
+```
+###### `.` is included so file is hidden
+
+Then add the following:
+
+```
+#!/bin/bash
+#exec > /dev/null 2>&1
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_testKEY.pub
+```
+Before you want to push/pull you will have to run  
+```
+$ source ~/.start-agent.sh
+```
 ---
 
 <br><br><br>
