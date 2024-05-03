@@ -119,3 +119,13 @@ Red Arrow `<p style="font-size: 32px; color: red;">&#10145;</p>`
   <strong>Author:</strong> Johane Doe <br>
   <strong>Date:</strong> 2024.04.~<br>
 </blockquote>
+
+##### Notebook Titles
+```
+<span style="font-size:24pt; color:blue; font-family: 'Times New Roman'">Notebook:: 
+    <span style="color:green;"> Title goes here </span>
+</span>
+<br>
+<span style="font-size:12pt; color:black; font-family:Georgia, serif;font-style:italic">by Jean Doe </span>
+<br>
+```
