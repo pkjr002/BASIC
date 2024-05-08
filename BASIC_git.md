@@ -237,6 +237,8 @@ git reset --mixed #
 ```
 git reset --soft HEAD~1
 ```
+or `git reset --soft [commit-hash]`  
+
 ### Merge main into a branch
 ```
 $ git checkout main
