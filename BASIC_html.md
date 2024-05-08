@@ -31,6 +31,8 @@ Red Arrow `<p style="font-size: 32px; color: red;">&#10145;</p>`
 ```
 <a href="https://www.eg.com">LINK</a>
 ```
+shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: black; ">. <a href="https://www.eg.com">eg.com</a> </span>` 
+
 
 ### Boxed Hyperlink
 ```
@@ -120,7 +122,7 @@ Red Arrow `<p style="font-size: 32px; color: red;">&#10145;</p>`
   <strong>Date:</strong> 2024.04.~<br>
 </blockquote>
 
-##### Notebook Titles
+## TOP Notebook Title
 ```
 <span style="font-size:24pt; color:blue; font-family: 'Times New Roman'">Notebook:: 
     <span style="color:green;"> Title goes here </span>
@@ -128,4 +130,16 @@ Red Arrow `<p style="font-size: 32px; color: red;">&#10145;</p>`
 <br>
 <span style="font-size:12pt; color:black; font-family:Georgia, serif;font-style:italic">by Jean Doe </span>
 <br>
+```
+
+#### Background/Research question
+```
+<br><br>  
+<span style="font-family:'Courier New', monospace; font-size:14pt; color:black"> <b>Broad Research Question::</b> <br>  
+Write here what the research question is.
+</span>
+<br>
+<span style="font-family:'Courier New', monospace; font-size:14pt; color:black"> <b>Background::</b> <br>
+ Write here what the Background is
+</span>
 ```
