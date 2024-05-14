@@ -341,3 +341,9 @@ $ git branch $BRANCH_NAME
 :pushpin: for pinning dependencies
 :construction: for work in progress
 :information_source: for adding information
+
+# .gitignore
+Ignore directories named `_DIR` at any depth
+```
+**/_DIR/
+```
