@@ -32,3 +32,8 @@ is displayed as
 - [ ] Do task 1
 - [ ] Do task 2
 ```
+
+### Links
+```
+[link](https://example.org)
+```
