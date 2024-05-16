@@ -37,3 +37,6 @@ is displayed as
 ```
 [link](https://example.org)
 ```
+
+# Resources 
+This link [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) provides a quick overview of all the Markdown syntax elements.
