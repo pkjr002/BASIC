@@ -30,5 +30,9 @@ Info about nodes and partitions `$ sinfo -N -l -n <node name>`
 `$ scontrol show node <node names>` .....Displays info about the specified nodes. *If no node name is specified, info for all nodes in the cluster is displayed*.   
 
 
+# Resources 
+This link (fas.harvard)[https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/] list Convenient SLURM Commands. 
+
+
 
 
