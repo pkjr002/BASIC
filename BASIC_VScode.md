@@ -17,7 +17,8 @@ Type `Open User Settings (JSON)`
 Add the line `"explorer.autoReveal": false`  
 
 
-# VS code appearance.
+# SETTINGS VS code.
+On keyboard hold `shift+cmd+p` and then find settings.json file.  
 In the settings.json add the following
 ```
 {
@@ -34,6 +35,13 @@ In the settings.json add the following
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "workbench.list.openMode": "doubleClick",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.editorAssociations": {
+        "*.pdf": "pdf.view"
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "git.confirmSync": false,
+    "editor.wordWrap": "on",
 }
 ```
 
@@ -43,3 +51,7 @@ In the settings.json add the following
 `shift+cmd+P`  
 Type `Markdown: Open Preview`  
 OR `shift+cmd+V`  
+
+
+## Fit Code on the viewport VScode Editor
+Go to se
