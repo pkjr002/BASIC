@@ -37,11 +37,12 @@ In the settings.json add the following
     "workbench.list.openMode": "doubleClick",
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "workbench.editorAssociations": {
-        "*.pdf": "pdf.view"
+        "*.pdf": "pdf.view",
+        "*.md": "vscode.markdown.preview.editor"
     },
     "git.openRepositoryInParentFolders": "always",
     "git.confirmSync": false,
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "on"
 }
 ```
 
