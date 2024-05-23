@@ -79,10 +79,44 @@ Small Caps `\textsc{\}`
 \end{enumerate}
 ```
 
-## Hyperlinks
+## Hyperlinks and Icons
 ```
-\usepackage{hyperref}
-\href{http://example.com}{Example-Link}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\href{http://example.com}{\texttt{Example-Link}}
+```
+
+#### List of some common used icons
+```
+\documentclass{article}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{fontawesome}
+
+\begin{document}
+
+\begin{itemize}
+  \item \faGithub\ GitHub: \href{https://github.com/radical-collaboration/facts}{\texttt{github.com/radical-collaboration/facts}}
+  \item \faMapMarker\ Location: \href{https://maps.google.com}{Google Maps}
+  \item \faPhone\ Phone: +123-456-7890
+  \item \faEnvelope\ Email: \href{mailto:someone@example.com}{someone@example.com}
+  \item \faCloud\ Weather: \href{https://weather.com}{Weather.com}
+  \item \faLinkedin\ LinkedIn: \href{https://linkedin.com}{LinkedIn Profile}
+  \item \faFacebook\ Facebook: \href{https://facebook.com}{Facebook Page}
+  \item \faTwitter\ Twitter: \href{https://twitter.com}{Twitter Profile}
+  \item \faInstagram\ Instagram: \href{https://instagram.com}{Instagram Profile}
+  \item \faHome\ Home: \href{https://example.com}{Home Page}
+  \item \faCalendar\ Calendar: \href{https://calendar.google.com}{Google Calendar}
+  \item \faUser\ User: \href{https://example.com/user}{User Profile}
+  \item \faLock\ Security: \href{https://example.com/security}{Security Settings}
+  \item \faCamera\ Photography: \href{https://example.com/photography}{Photography Portfolio}
+  \item \faCoffee\ Cafe: \href{https://example.com/cafe}{Favorite Cafe}
+  \item \faCar\ Transport: \href{https://example.com/transport}{Transport Services}
+  \item \faPlane\ Travel: \href{https://example.com/travel}{Travel Blog}
+  \item \faTree\ Environment: \href{https://example.com/environment}{Environmental Initiatives}
+  \item \faBook\ Library: \href{https://example.com/library}{Online Library}
+  \item \faGraduationCap\ Education: \href{https://example.com/education}{Educational Resources}
+\end{itemize}
+
+\end{document}
 ```
 
 
@@ -175,3 +209,5 @@ Item 1 & Item 2 \\
 The footskip parameter in LaTeX determines the distance between these two points: the bottom of the main text area and the top of the footer. This is the vertical space reserved for the footer content.
 So, when you set footskip=.5cm, you're specifying that there should be a .5cm gap between the end of your main text and the beginning of your footer content.
 ```
+
+
