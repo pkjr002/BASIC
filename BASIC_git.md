@@ -342,8 +342,10 @@ $ git branch $BRANCH_NAME
 :construction: for work in progress
 :information_source: for adding information
 
-# .gitignore
+# `.gitignore`
 Ignore directories named `_DIR` at any depth
 ```
 **/_DIR/
 ```
+
+#### A collection of [`.gitignore` templates](https://github.com/github/gitignore)
