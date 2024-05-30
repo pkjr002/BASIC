@@ -26,6 +26,12 @@ Small Caps `\textsc{\}`
 \hl{highlight}
 ```
 
+### Strikethrough
+```
+\usepackage[normalem]{ulem}  
+\sout{strike through text}
+```
+
 ### Standard size commands
 ```
 \tiny        
