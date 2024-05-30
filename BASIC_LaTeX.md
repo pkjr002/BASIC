@@ -15,9 +15,16 @@ typewriter (monospaced) `\texttt{}`
 Small Caps `\textsc{\}`
 
 ### Color
-\usepackage{xcolor}
+```
+\usepackage{xcolor}  
 \textcolor{red}{This text is red.}
+```
 
+### Highlighting
+```
+\usepackage{soul}   
+\hl{highlight}
+```
 
 ### Standard size commands
 ```
