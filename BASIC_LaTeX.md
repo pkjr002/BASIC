@@ -182,6 +182,15 @@ Item 1 & Item 2 \\
 \RequirePackage[left=1.5cm, right=1cm, top=0.5cm, bottom=0.5cm, footskip=0.5cm, headheight=0.5cm]{geometry}
 ```
 
+##### `Margin Note`
+```
+% Custom command for a margin note (smaller text)
+\newcommand{\marginsmallnote}[2][0cm]{%
+  \marginnote{\tiny{#2}}[#1]%
+}
+```
+use as `\marginsmallnote[-6cm]{This is a margin note.}`  
+
 ## Document Structure
 ```
 \section{Section Title}
