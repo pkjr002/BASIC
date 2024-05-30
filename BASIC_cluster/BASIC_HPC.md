@@ -31,7 +31,7 @@ Info about nodes and partitions `$ sinfo -N -l -n <node name>`
 
 
 # Resources 
-This link (fas.harvard)[https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/] list Convenient SLURM Commands. 
+This link [fas.harvard](https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/) list Convenient SLURM Commands. 
 
 
 
