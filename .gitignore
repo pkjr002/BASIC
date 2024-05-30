@@ -1,3 +1,12 @@
-_IGNORE
+# Byte-compiled #
+__pycache__/
+*.py[cod]
+*$py.class
 .DS_Store 
-BASIC_spectra/
+
+# format files #
+*.pdf
+
+# User folders #
+/BASIC_spectra/
+/_IGNORE
