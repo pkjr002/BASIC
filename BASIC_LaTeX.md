@@ -24,6 +24,12 @@ Small Caps `\textsc{\}`
 ```
 \usepackage{soul}   
 \hl{highlight}
+```  
+Above may have conflict when using strikethrough/underline, best to create custom  
+```
+\usepackage{xcolor}
+% Custom command for highlighting
+\newcommand{\myhl}[1]{\colorbox{yellow}{#1}}
 ```
 
 ### Strikethrough
