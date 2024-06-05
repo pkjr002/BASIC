@@ -197,9 +197,13 @@ git rm -r <path-to-folder>    # Use -r if it's a folder
 git commit -m "Remove original folder from Branch A"
 ```
 
-#### List the configured remote repositories
+---
+## List the configured remote repositories
+> **frequently used**  
 ```
 $ git remote -v
+$ git config --list
+$ git checkout -b
 ```
 
 #### Identifying the Protocol from the URL
