@@ -40,6 +40,8 @@ if [ -z "$directory" ] || [ -z "$output_file" ]; then
   echo "Usage: $0 /path/to/directory output.txt"
   exit 1
 fi
+current_date=$(date +%Y-%m-%d)
+output_file_with_date="${output_file}_${current_date}.txt"
 # Find files and dir. Format them in a tree structure.
 find "$directory" | awk 'BEGIN{FS="/"; OFS="|"} {
     depth = NF - 1
@@ -50,7 +52,7 @@ find "$directory" | awk 'BEGIN{FS="/"; OFS="|"} {
         printf "+--- "
     }
     print $NF
-}'> "$output_file"
+}'> "$output_file_with_date"
 ```  
 Make sure to make this executable by `chmod +x ls_tree.sh`  
 Run the script using   
