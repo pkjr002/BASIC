@@ -353,3 +353,19 @@ Ignore directories named `_DIR` at any depth
 ```
 
 #### A collection of [`.gitignore` templates](https://github.com/github/gitignore)
+
+### Sample `.gitignore`  
+```
+# Byte-compiled #
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store 
+
+# format files #
+
+# User folders #
+
+# User files #
+print_.py
+```
