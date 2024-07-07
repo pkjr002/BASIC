@@ -38,5 +38,18 @@ is displayed as
 [link](https://example.org)
 ```
 
+# Pictures   
+Grid Layout (2 Rows and 3 Columns)
+```
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+  <img src="image1.jpg" alt="Image 1" style="width: 100%;">
+  <img src="image2.jpg" alt="Image 2" style="width: 100%;">
+  <img src="image3.jpg" alt="Image 3" style="width: 100%;">
+  <img src="image4.jpg" alt="Image 4" style="width: 100%;">
+  <img src="image5.jpg" alt="Image 5" style="width: 100%;">
+</div>
+```   
+... see more @ BASIC_html
+
 # Resources 
 This link [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) provides a quick overview of all the Markdown syntax elements.
