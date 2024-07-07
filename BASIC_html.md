@@ -102,6 +102,33 @@ shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: 
 
 <br>
 
+# Pictures  
+Grid Layout (2 Rows and 3 Columns)  
+```
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+  <img src="image1.jpg" alt="Image 1" style="width: 100%;">
+  <img src="image2.jpg" alt="Image 2" style="width: 100%;">
+  <img src="image3.jpg" alt="Image 3" style="width: 100%;">
+  <img src="image4.jpg" alt="Image 4" style="width: 100%;">
+  <img src="image5.jpg" alt="Image 5" style="width: 100%;">
+</div>  
+```
+
+Vertical Layout
+```
+<div>
+  <img src="image1.jpg" alt="Image 1" style="width: 100%; margin-bottom: 10px;">
+</div>
+```  
+
+Single Row (Horizontal Layout)  
+```
+<div style="display: flex; justify-content: space-between;">
+  <img src="image1.jpg" alt="Image 1" style="width: 18%;">
+</div>
+```
+
+
 # Template
 ```
 <!DOCTYPE html>
