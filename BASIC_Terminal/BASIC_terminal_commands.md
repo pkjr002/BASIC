@@ -40,3 +40,24 @@
 `export   `............................Set or export the environment variable  
 `uname    `............................Print system information  
 `man      `............................Interface to the system reference manuals  
+
+
+
+
+# `Top`  
+Get `PID` of the process.   
+```
+ps aux | grep process_name  
+```     
+
+This displays information about the process with the PID 1234. `ps -p 1234`  
+
+Then you can use `top -pid 33601`
+
+
+
+```
+ps -eo pid,ppid,cmd,%mem,%cpu
+
+ps -ef | grep
+```
