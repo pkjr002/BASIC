@@ -1,8 +1,7 @@
-> **Author:** pkjr002@gmail.com  
-> **Date:** 2024-03-02   
-> **Needs:** NA
-
 # General
+
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
+
 ### Font 
 ```
 <span style="font-size: 12pt; font-family: 'Times New Roman'; color: blue; ">.      </span>  
@@ -18,14 +17,16 @@ Bold `<b>`
 Red Arrow `<p style="font-size: 32px; color: red;">&#10145;</p>`  
 
 
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
+
 ### Highlighting 
 ```
 <span style="background-color: yellow;"> dum </span>
-```
-```
 <span style="font-size: 14pt; color: blue; font-family: 'Times New Roman'; background-color: yellow;">   dum   </span>
-```  
+```
 
+
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
 
 ### Hyperlink
 ```
@@ -33,6 +34,9 @@ Red Arrow `<p style="font-size: 32px; color: red;">&#10145;</p>`
 ```
 shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: black; ">. <a href="https://www.eg.com">eg.com</a> </span>` 
 
+
+
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
 
 ### Boxed Hyperlink
 ```
@@ -46,6 +50,8 @@ shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: 
 </div>
 ```
 
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
+
 ### List
 ```
 <ol>
@@ -54,7 +60,7 @@ shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: 
 </ol>
 ```
 
-<br>
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
 
 # Horizontal Line
 ```
@@ -67,19 +73,15 @@ shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: 
 
 ### Half-line (centered)
 ```
-<div style="width: 50%; margin: auto;">
-    <hr style="border: none; height: 2px; background-color: yellow; border-style: dotted;">
-</div>
+<hr style="border: none; height: 2px; background-color: yellow; border-style: dotted;">
 ```
 
 ### Half-line (left)
 ```
-<div style="position: relative; width: 100%;">
-    <hr style="position: absolute; left: 0; width: 50%; border: none; height: 2px; background-color: yellow; border-style: dotted;">
-</div>
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: yellow; border-style: dotted;">
 ```
 
-<br>
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
 
 # CSS styling
 ```
