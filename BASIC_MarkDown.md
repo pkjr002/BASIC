@@ -51,5 +51,6 @@ Grid Layout (2 Rows and 3 Columns)
 ```   
 ... see more @ BASIC_html
 
-# Resources 
-This link [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) provides a quick overview of all the Markdown syntax elements.
+# Resources
+- This is a quick look-up [Markdown-cmd-repo](https://github.com/tchapi/markdown-cheatsheet/tree/master?tab=readme-ov-file#markdown-cheatsheet) serves as a quick-look-up Markdown Cheatsheet.   
+- This link [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) provides a quick overview of all the Markdown syntax elements.  
