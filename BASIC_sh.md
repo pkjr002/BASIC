@@ -20,21 +20,28 @@ Tool that groups multiple files and folders into a single file. Note, it does no
 * __Preserving Structure__: It preserves the directory structure and metadata (like permissions and timestamps) of the files and directories it archives.
 * __Compression__: While tar itself does not compress files, it is often used in combination with compression tools like `gzip` or `bzip2` to both archive and compress files in one step.  
 
-`Create` an archive: 
+`Create` an archive:   
+Create a compressed tarball of the contents of `/path/to/the/folder/archive`
 ```
-tar -cvf archive.tar /path/to/directory
-```
+tar -cvf archive.tar -C /path/to/the/folder archive
+```  
+*Flags:*  
+`-c`: Create a new archive.    
+`-v`: Verbose mode, which lists files being processed.    
+`-f archive.tar`: Specify the name of the output `*.tar` file.     
+`-C /path/to/the/folder`: Change to the specified directory before performing the operation.      
+`archive`: The directory to include in the `archive.tar`.    
+
+
 
 `Extract` an archive: 
 ```
-tar -xvf archive.tar
+tar -xvf archive.tar 
 ```
 
-*Flags:*
-`-c` creates a new archive,
+*Flags:*  
 `-x` extracts the archive,  
-`-v` shows the progress in the terminal (verbose),
-`-f` specifies the file name of the archive.  
+ 
 
 
 ## File Compression 
@@ -45,18 +52,18 @@ This is used so that files take up less space on your computer. Here are some be
 
 Some of the most popular compression tools are:
 1. `Gzip`: It's faster at compressing files (_might not reduce the file size as much as Bzip2_).  
-    - compress `tar -cvzf archive.tar.gz /path/to/directory`   
-    - extract `tar -xvzf archive.tar.gz`
+    - compress `tar -cvzf archive.tar.gz -C /path/to/the/folder archive`   
+    - extract `tar -xvzf archive.tar.gz -C /path/to/extract`
     
 1. `Bzip2`: It takes more time to compress files (_usually makes them even smaller than Gzip_).    
-    - compress `tar -cvjf archive.tar.bz2 /path/to/directory`    
-    - extract  `tar -xvjf archive.tar.bz2`    
+    - compress `tar -cvjf archive.tar.bz2 -C /path/to/the/folder archive`    
+    - extract  `tar -xvjf archive.tar.bz2 -C /path/to/extract`    
 
 > Note the *Flags:*   
 `-z` for `gzip`  
 `-j` for `bzip2`.     
 
-<br><br>  
+<br>
 
 ### Parallel Compression Tools   
 These tools can significantly speed up the compression and decompression processes by utilizing the full capabilities of modern multi-core processors.  
@@ -70,10 +77,35 @@ A method that has proven to be optimal with `.gz` is `pigz`.
 tar -cvf - /path/to/source | pigz > archive.tar.gz  
 ```  
 
+<br>
+
+## List Contents of `*tgz` without uncompressing.       
+`tar -tzvf filename.tgz`   
+`-t`: List the contents of an archive.
+
+
 <br><br>
 
+## File compare   
+
+`diff -qr /path/to/directory1 /path/to/directory2`    tool to compare the contents of two directories   
+
+<br>
+
+To compare the contents of two `.tgz` files without extracting them to disk,
+```
+file1="/somefile.tgz"
+file2="/otherfile.tgz"
+
+diff <(tar -tf "${file1}" | sort) <(tar -tf "${file2}" | sort)
+```
+
+
+
 ## Permissions  
-  
+
+`chmod -x filename.sh`  make script executable.  
+
 ```  
 chmod 755 
 ```    
