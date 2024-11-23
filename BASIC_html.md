@@ -1,5 +1,32 @@
 # General
 
+<details>
+<summary> Quick Reference: Text Formatting Tags in HTML </summary>
+
+| **Tag**      | **Purpose**                 | **Default Style**           |
+|--------------|-----------------------------|-----------------------------|
+| `<mark>`     | Highlight text              | Yellow background           |
+| `<b>`        | Bold text (stylistic)       | Bold                        |
+| `<strong>`   | Important text              | Bold                        |
+| `<i>`        | Italic text (stylistic)     | Italic                      |
+| `<em>`       | Emphasized text             | Italic                      |
+| `<var>`      | Variables                   | Italic                      |
+| `<u>`        | Underlined text             | Underline                   |
+| `<ins>`      | Inserted text               | Underline                   |
+| `<del>`      | Deleted text                | Strikethrough               |
+| `<s>`        | Strikethrough (irrelevant)  | Strikethrough               |
+| `<code>`     | Inline code snippet         | Monospace                   |
+| `<pre>`      | Preformatted text           | Monospace with spacing      |
+| `<kbd>`      | Keyboard input              | Monospace key-like text     |
+| `<small>`    | Fine print                  | Smaller font                |
+| `<sup>`      | Superscript text            | Raised text                 |
+| `<sub>`      | Subscript text              | Lowered text                |
+
+</details>
+
+<br><br>
+
+
 <hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
 
 ### Font 
@@ -62,6 +89,23 @@ shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: 
 
 <hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
 
+
+# Boxed title  
+
+### Box spans the fill page width / Box borders the text
+```   
+<div>
+    <h1 style="border: 1px solid black; padding: 10px; color: blue;">
+    <h1 style="display: inline-block; border: 1px solid black; padding: 10px; color: blue;">
+
+        <span style="color: black;">
+            <b>PLOT::</b> 
+        </span>
+    </h1>
+</div>
+```   
+
+
 # Horizontal Line
 ```
 <hr style="border: none; height: 2px; background-color: none; border-style: dotted;">
@@ -78,7 +122,7 @@ shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: 
 
 ### Half-line (left)
 ```
-<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: yellow; border-style: dotted;">
+<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: solid;">
 ```
 
 <hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
