@@ -1,7 +1,8 @@
 # A basic list of everything sh  
-This will likely have to be split up moving forward, for now I am just populating. 
+This will have to be split up moving forward, for now I am just populating. 
 
-## Very useful shell commands  
+## Shell command 101
+
 ```
 uname -a .......................display detailed information about the system. 
 env.............................used to display, set, or remove environment variables. Also to run a command in a modified environment without changing the current environment.
@@ -13,35 +14,112 @@ du -xsch........................disk space
 ls -ld..........................display detailed information about directories
 ```
 
+<br>
+
 ## Archive directory: `tar` (Tape Archive)   
 Purpose: **Bundle Together** `files/folders` preserving directory structure and metadata.
 Tool that groups multiple files and folders into a single file. Note, it does not compress to save space. Originally created to write data to tape drives, its uses mainly involve:   
 * __Archiving__: tar can bundle many files and directories into a single file, making it easier to transfer or backup.
 * __Preserving Structure__: It preserves the directory structure and metadata (like permissions and timestamps) of the files and directories it archives.
 * __Compression__: While tar itself does not compress files, it is often used in combination with compression tools like `gzip` or `bzip2` to both archive and compress files in one step.  
+<br>
 
 `Create` an archive:   
 Create a compressed tarball of the contents of `/path/to/the/folder/archive`
 ```
 tar -cvf archive.tar -C /path/to/the/folder archive
 ```  
-*Flags:*  
+<details>
+<summary> <i>Flags:</i>   </summary>   
+
 `-c`: Create a new archive.    
 `-v`: Verbose mode, which lists files being processed.    
 `-f archive.tar`: Specify the name of the output `*.tar` file.     
 `-C /path/to/the/folder`: Change to the specified directory before performing the operation.      
 `archive`: The directory to include in the `archive.tar`.    
-
-
+</details>
+<br>
 
 `Extract` an archive: 
 ```
 tar -xvf archive.tar 
 ```
 
-*Flags:*  
+<details>
+<summary> <i>Flags:</i>   </summary>   
+
 `-x` extracts the archive,  
- 
+</details>
+<br>
+
+
+## Copy Synchronizing of File/directories     
+`rsync` is a powerful, efficient tool for synchronizing files and directories between two locations. It’s widely used for backups, file transfers, and mirroring data across systems, both locally and remotely
+
+copy excluding folders  
+`rsync -av --exclude='output' path/to/folder path/to/destination/`   
+Note that the folder  `folder` will be copied to `path/to/folder path/to/destination/` excluding the `output` folder. 
+
+
+```
+rsync -av --delete folder/ /scratch/usr/folder/
+```
+
+##### Command Breakdown:
+<details>
+<summary> Flag/Variable Description </summary>
+
+`-a:` Archive mode, which recursively copies all files and directories, preserving symbolic links, permissions, modification times, and more.   
+`-v:` Verbose mode, providing detailed output of the synchronization process.     
+`--delete:` Deletes files in the destination (`/scratch/usr/folder/`) that do not exist in the source (`folder/`).    
+`folder/:` The source directory you are syncing from.      
+`/scratch/usr/folder/:` The destination directory where you are syncing the contents of `folder/`.      
+</details>    
+<br>
+
+1. Copies the content of `folder/` (including subdirectories and files) to the destination `/scratch/usr/folder/`.    
+    - This will synchronize the source with the destination, making the contents the same.
+
+1. The trailing slashes after `folder/` indicate that only the contents of the `folder/` directory will be synchronized, not the directory itself. 
+    - So, the command will copy all the contents (files, subdirectories, etc.) inside `folder/` to `/scratch/usr/folder/`.
+
+1. The `--delete` flag ensures that any files or directories in `/scratch/usr/folder/` that are not in the source `folder/` will be deleted. 
+    - However, it will only delete files within the `/scratch/usr/folder/` directory, not the parent directory `/scratch/usr/` itself.
+
+1. Tt will not delete `/scratch/usr/`. The `--delete` flag only affects files inside the destination directory, which in this case is `/scratch/usr/folder/`. 
+    - So, only files inside `/scratch/usr/folder/` that do not exist in the source `folder/` will be deleted.
+
+      
+Synchronize the contents of `folder/` with `/scratch/usr/folder/`.   
+Delete files inside `/scratch/usr/folder/` that do not exist in `folder/`.
+It will not delete `/scratch/usr/` itself or any files outside the` /scratch/usr/folder/` directory.
+<br><br>
+
+## File Comparison    
+Using `cmp` for Binary Comparison:   `cmp /path/to/local/file.txt /path/to/local/temp_file.tx`  
+
+<br>
+
+Using `rsync` for Efficient Comparison and Synchronization: `rsync -avz --dry-run /path/to/local/file.txt user@remote:/path/to/remote/file.txt`
+rsync can be used to compare files between local and remote systems efficiently.   
+```
+rsync -av --dry-run --checksum /path/to/local/file.txt user@remote:/path/to/remote/file.txt
+```
+
+
+###### Using ssh and cmp for Binary Files
+
+If you need to compare binary files, you can use cmp  
+`ssh user@remote "cat /path/to/remote/file.txt" | cmp /path/to/local/file.txt -`
+
+
+
+<u>Using awk and uniq</u>
+Use `awk` to filter out the unique entries directly  
+```
+tar -tvf /projects/kopp/pk695/2404_NZreRun/nz.585.tar | awk '{print $NF}' | cut -d/ -f1 | uniq
+```
+
 
 
 ## File Compression 
@@ -83,12 +161,20 @@ tar -cvf - /path/to/source | pigz > archive.tar.gz
 `tar -tzvf filename.tgz`   
 `-t`: List the contents of an archive.
 
+* If you want to preview the first 5 lines of a text file (file.txt) inside archive.tar, use this command:  
+`tar -Oxvf archive.tar file.txt | head -n 5`
+
 
 <br><br>
 
 ## File compare   
 
-`diff -qr /path/to/directory1 /path/to/directory2`    tool to compare the contents of two directories   
+Define the 2 folders
+- `dir1="path/to/dir"` 
+- `dir2="alternate/route/to/the/needed/dir"`
+
+`diff -qr $file1 $file2`    tool to compare the contents of two directories   
+*flags* `-q`  Report whether files differ, without detailing the differences. , `-r` Recursively.
 
 <br>
 
