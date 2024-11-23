@@ -239,3 +239,5 @@ So, when you set footskip=.5cm, you're specifying that there should be a .5cm ga
 ```
 
 
+# Web Links   
+[LaTeX/Basics](https://en.wikibooks.org/wiki/LaTeX/Basics)
