@@ -1,30 +1,51 @@
-# `GIT`
+# `GIT` & `GitHUB` 
+
+<b>Git</b> is a <mark>distributed version control system</mark> that allows developers to track changes to code, collaborate on projects, and manage source code history. 
+  - It helps teams work on the same project simultaneously without overwriting each other's work and enables reverting to previous versions if needed.
+
+<br>
+
+<b>GitHub</b> is a <mark>web-based platform built on top of Git</mark> that provides tools for hosting, sharing, and collaborating on Git repositories. 
+  - It offers features like pull requests, issue tracking, and CI/CD integrations, making it a hub for open-source projects and team-based software development.
+
 <br>  
 
-> **frequently used** 
+<details>
 
-`git --version`.......................................git version X.X.X.X        
-`git remote -v`.......................................details of push/fetch linked to origin  git@github.com:uname/REPO.git
-`git config --list`...................................git details, configured remote repos etc               
-`git rev-parse --show-toplevel`.......................get top-level dir of Git repo
-
+<summary> List of frequently used <code> git</code> commands </summary>    
 <br>
 
-`git reset --soft HEAD~1`.............................One commit back
-`git reset --soft [commit-hash]`......................
-`git reset --mixed #`  .................................Mixed allow you to jump to previous commits keeping the changed files
-       
+`git --version`.......................................git version X.X.X.X          
+`git remote -v`.......................................details of push/fetch linked to origin  git@github.com:uname/REPO.git     
+`git config --list`...................................git details, configured remote repos etc                   
+`git rev-parse --show-toplevel`.......................get top-level dir of Git repo     
 <br>
 
-`git branch -m bugfix`................Rename a branch
-`git add -u`..........................Stage Deleted Files    
+`git reset --soft HEAD~1`.............................One commit back     
+`git reset --soft [commit-hash]`......................  Moves to [commit-hash], keeping changes staged. Use for undoing commits without affecting the working directory or index.   
+`git reset --mixed #`  .................................Mixed allow you to jump to previous commits keeping the changed files        
+<br>
+
+`git branch -m bugfix`................Rename a branch     
+`git add -u`..........................Stage Deleted Files          
+<br>
+
 `git commit --amend -m`...............Change the commit message, NO staged changes can be present    
 `git commit --amend --no-edit`........Forgot to add a file to the commit (DOESNOT edit the message)     
 
+</details>
+
+<br><br>
 
 <hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
 
-Common workflows.
+# Common workflows.
+
+### Clone a branch  
+- Fetch All Branches and Checkout One `git clone --branch [branch_name] [remote-url]`
+
+- Fetch Files from Single Branch Only `git clone --branch [branch_name] --single-branch [remote-url]`
+
 
 ### Push your changes to GitHub (to origin )
 ```
@@ -68,12 +89,12 @@ git rm -r <path-to-folder>    # Use -r if it's a folder
 git commit -m "Remove original folder from Branch A"
 ```
 
-<hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;">  <br>
+<br>
 
-Advanced
+<details>
+<summary> A list of more higher-level operations : </summary>
 
 `git checkout [Branch 4m where u copying] -- path/to/your/FOLDER/file`....Copy One or two files/FOLDER from one branch to other.   
-
 <br>
 
 `git checkout <commit_hash> <relative_path_to_file_or_dir>`.......Copy files and folder from commit hash of another branch.    
@@ -81,44 +102,40 @@ Advanced
 `git ls-files | xargs -n 1 dirname | uniq`........................List all git tracked FOLDERS under the branch main      
 `git fetch --prune`...............................................Clean local record (of remote/origin) of stale branches that no longer exist origin.   
 
+</details>
+
+<br>
+
 <hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;"><br>  
 
-## Emojee  
-:bug: for bug fixes
-:memo: for documentation
-:art: for design changes
-:rocket: for new features
-:sparkles: for new implementations
-:recycle: for refactoring code
-:white_check_mark: for adding tests
-:lock: for dealing with security issues
-:heavy_plus_sign: for adding functionality
-:heavy_minus_sign: for removing functionality
-:wrench: for tooling changes
-:pencil2: for fixing typos
-:lipstick: for updating the UI and style
-:green_heart: for fixing CI build    
-:tada: for initial commits or big changes
-:sparkles: for new implementations
-:recycle: for refactoring code
-:white_check_mark: for adding tests
-:lock: for dealing with security issues
-:heavy_plus_sign: for adding functionality
-:heavy_minus_sign: for removing functionality
-:wrench: for tooling changes
-:pencil2: for fixing typos
-:lipstick: for updating the UI and style
-:green_heart: for fixing CI build
-:rotating_light: for performance improvements
-:ok_hand: for code review
-:cloud: for cloud related changes
-:arrow_up: for upgrading dependencies
-:arrow_down: for downgrading dependencies
-:bookmark: for version tags
-:pushpin: for pinning dependencies
-:construction: for work in progress
-:information_source: for adding information
-
+## Emojee     
+:construction: for work in progress     
+:bug: for bug fixes      
+:rotating_light: for performance improvements      
+:sparkles: for new implementations      
+:tada: for initial commits or big changes       
+:recycle: for refactoring code      
+:wrench: for tooling changes    
+<details>    
+<summary> Expand for more </summary>     
+:pencil2: for fixing typos     
+:memo: for documentation     
+:heavy_plus_sign: for adding functionality    
+:heavy_minus_sign: for removing functionality    
+:white_check_mark: for adding tests     
+:lock: for dealing with security issues     
+:arrow_up: for upgrading dependencies    
+:arrow_down: for downgrading dependencies     
+:art: for design changes   
+:rocket: for new features     
+:lipstick: for updating the UI and style     
+:green_heart: for fixing CI build        
+:ok_hand: for code review     
+:cloud: for cloud related changes   
+:bookmark: for version tags   
+:pushpin: for pinning dependencies    
+:information_source: for adding information    
+</details>     
 
 <hr style="position: absolute; left: 1.5; width: 50%; height: 2px; background-color: blue; border-style: dotted;"> <br> 
 
