@@ -33,6 +33,8 @@
 `git commit --amend -m`...............Change the commit message, NO staged changes can be present    
 `git commit --amend --no-edit`........Forgot to add a file to the commit (DOESNOT edit the message)     
 
+`git remote set-url origin git@github.com:uname/facts.git` ........ update the remote to point to your fork
+
 </details>
 
 <br><br>
