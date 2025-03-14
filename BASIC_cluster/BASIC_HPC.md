@@ -29,10 +29,15 @@ Info about nodes and partitions `$ sinfo -N -l -n <node name>`
 `$ scontrol show job <jobid>` ...........Displays detailed information about a specific SLURM job, including its state, allocated resources, and job script details.  
 `$ scontrol show node <node names>` .....Displays info about the specified nodes. *If no node name is specified, info for all nodes in the cluster is displayed*.   
 
+<br>
+
+# HPC modules   
+```
+module -r spider '.*hdf5.*'
+```    
+Check out more on [spider module load commands for hpc](https://lmod.readthedocs.io/en/latest/135_module_spider.html)   
+
+<br>
 
 # Resources 
 This link [fas.harvard](https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/) list Convenient SLURM Commands. 
-
-
-
-
