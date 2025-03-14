@@ -1,0 +1,1 @@
+VI basics from [Colorado State University](https://www.cs.colostate.edu/helpdocs/vi.html)
