@@ -35,7 +35,12 @@
 
 `git remote set-url origin git@github.com:uname/facts.git` ........ update the remote to point to your fork
 
-</details>
+</details>   
+
+<br><br>
+
+<b>To link</b> `git` to `gitHub` follow  [BASIC_git2GitHUB](BASIC_cluster/BASIC_git2GitHUB.md)   
+
 
 <br><br>
 
