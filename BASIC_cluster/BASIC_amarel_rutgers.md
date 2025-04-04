@@ -1,4 +1,12 @@
-# Specify SSH details on local
+# 101 Setup for working on amarel    
+## Some useful links:    
+1. [Rutgers:Amarel](https://sites.google.com/view/cluster-user-guide) cluster guide.      
+1. OARC/AMAREL [updates](https://oarc.rutgers.edu/events/list/) can be found here.  
+1. AMAREL hardware [spec](https://sites.google.com/view/cluster-user-guide/amarel#h.kyrykrouyxxz)
+
+<br>
+
+## Specify `SSH` details  
 In the ```~/.ssh/config``` file (if it doesnot exist, create it) add the following
 ```
 Host amarel.rutgers
@@ -7,9 +15,31 @@ Host amarel.rutgers
 ```
 <br>
 
----    
+## Link git to gitHUB 
+Check out this section on [Link your local `GIT`  to    `GitHub`](/BASIC_cluster/BASIC_git2GitHUB.md#link-your-local-git-to-github)
+
+<br>
+
 # File Transfer  
-> Look for ways to speed-up (parallelize) creation of `compressed archives` in `BASIC_sh.md` under _File Compression and Parallelism_
+> :bulb: Look for ways to speed-up (parallelize) creation of `compressed archives` in [BASIC_sh.md](/BASIC_sh/BASIC_sh.md#file-compression)
+
+## `scp` Transfer (specific to AMAREL)
+### Transfer files from your local system to your Amarel /home directory
+```
+scp file_1.txt file_2.txt unme001@amarel.rutgers.edu:/home/unme001
+```
+
+### Downloadfile from Amarel /home to your local
+```
+scp unme001@amarel.rutgers.edu:/home/unme001/file_1.txt .
+```
+
+### Copy full directory scp: Package directory as a single, compressed file before moving it
+```
+tar -czf my_dir.tar.gz my_dir
+```
+
+<br>
 
 ## (**NEW**) Fast transfer of `*tgz` (Amarel to home directory).    
   1. `rsync` is a powerful tool for file transfers, especially for synchronizing files and directories between two locations. Using `rsync` with `compression` and `SSH` can speed up the transfer.  
@@ -28,24 +58,6 @@ Host amarel.rutgers
       bbcp -s 16 /path/to/source user@remote_host:/path/to/destination  
       ```
       
-  
-## `scp` Transfer (specific to AMAREL)
-### Transfer files from your local system to your Amarel /home directory
-```
-scp file_1.txt file_2.txt unme001@amarel.rutgers.edu:/home/unme001
-```
-
-### Downloadfile from Amarel /home to your local
-```
-scp unme001@amarel.rutgers.edu:/home/unme001/file_1.txt .
-```
-
-### Copy full directory scp: Package directory as a single, compressed file before moving it
-```
-tar -czf my_dir.tar.gz my_dir
-```
-
-
 <br><br>
 
 # Load python 

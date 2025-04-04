@@ -1,8 +1,12 @@
 # Link your local `GIT`  to    `GitHub`
 
+<mark>Before embarking on this journey, make sure :</mark>
+1. to have [SSH](/BASIC_cluster/BASIC_amarel_rutgers.md#specify-ssh-details) configured. 
+1. familiarized with [git](/BASIC_git.md)  
+
 <br>
 
-### Steps `1 to 4` describe linking your `GitHUB` (online) to your local `git`. 
+> :bulb: Steps `1 to 4` describe linking your `GitHUB` (online) to your local `git`. 
 
 <br>
 
