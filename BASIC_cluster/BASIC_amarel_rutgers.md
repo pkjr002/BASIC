@@ -70,7 +70,8 @@ tar -czf my_dir.tar.gz my_dir
 
 <details>
 <summary> Script to copy multiple files</summary>
-Make sure you have [SSH configured](/BASIC_cluster/BASIC_amarel_rutgers.md#connect-to-amarel-via-ssh) 
+  Make sure you have <a href="/BASIC_cluster/BASIC_amarel_rutgers.md#connect-to-amarel-via-ssh"> SSH configured </a>
+  
   ```
   #!/bin/bash
 
@@ -94,11 +95,7 @@ Make sure you have [SSH configured](/BASIC_cluster/BASIC_amarel_rutgers.md#conne
       scp amarel:${REMOTE_PATH}/${FILE}" .
 
   done
-
-
   ```
-
-
 </details>
 
 
