@@ -167,6 +167,16 @@ Before you want to push/pull you will have to run
 ```
 source ~/.start-agent.sh
 ```
+
+
+---
+<br>
+
+🔧 ~/.ssh/config = set-and-forget key identity + convenience.
+
+🔐 ssh-agent = avoids re-entering passphrase repeatedly.
+
+
 ---
 
 <br><br><br>
