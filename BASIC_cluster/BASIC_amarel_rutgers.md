@@ -6,13 +6,40 @@
 
 <br>
 
-## Specify `SSH` details  
-In the ```~/.ssh/config``` file (if it doesnot exist, create it) add the following
+## Connect TO amarel via `SSH` 
+
 ```
-Host amarel.rutgers
-  HostName amarel.rutgers.edu
-  User unme001
+ssh <NetID>@amarel.rutgers.edu
 ```
+The above will prompt for password. To avoid password prompts: Use SSH keys.    
+
+1. Generate a key pair 
+    ```
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+    ```
+    Refer to [git2GitHUB](/BASIC_cluster/BASIC_git2GitHUB.md#31-generate-a-ssh-key-pair-using-the-ed25519-algorithm) and choose key location. 
+
+1. Copy this `.pub` file key to amarel `~/.ssh/authorized_keys`
+    ```
+    cat ~/.ssh/id_ed25519.pub | ssh unme@amarel.rutgers.edu "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+    ```
+
+1. Test login without password:   
+    ```
+    ssh unme@amarel.rutgers.edu
+    ```
+
+1. Alias the `unme@amarel.rutgers.edu` on local machine.    
+  In the `~/.ssh/config` file (if it doesnot exist, create it) add the following:     
+    ```
+    Host amarel
+      HostName amarel.rutgers.edu
+      User uname
+      IdentityFile ~/.ssh/id_file
+      IdentitiesOnly yes
+    ```
+    Adding this allows you to `ssh amarel` to login without password.     
+
 <br>
 
 ## Link git to gitHUB 
@@ -38,6 +65,45 @@ scp unme001@amarel.rutgers.edu:/home/unme001/file_1.txt .
 ```
 tar -czf my_dir.tar.gz my_dir
 ```
+
+
+
+<details>
+<summary> Script to copy multiple files</summary>
+Make sure you have [SSH configured](/BASIC_cluster/BASIC_amarel_rutgers.md#connect-to-amarel-via-ssh) 
+  ```
+  #!/bin/bash
+
+  # variable format 
+  REMOTE_USER="uname"
+  REMOTE_HOST="amarel.rutgers.edu" 
+  REMOTE_PATH="/scratch/$(REMOTE_USER)/FACTS"
+
+  FILES=(
+    facts.install.amarel_incomplete.md
+    facts.install.exec.facts.md
+    READMEpostprocess.md
+    facts.install.nz.exp.cookbook.md
+    FACTS.2024.08.02_spaceTree.txt
+  )
+
+  for FILE in "${FILES[@]}"; do
+      scp "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}/${FILE}" .
+      
+      # OR If you have added  alias in `~/.ssh/config` then use 
+      scp amarel:${REMOTE_PATH}/${FILE}" .
+
+  done
+
+
+  ```
+
+
+</details>
+
+
+
+
 
 <br>
 
