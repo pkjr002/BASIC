@@ -33,7 +33,7 @@
 `git commit --amend -m`...............Change the commit message, NO staged changes can be present    
 `git commit --amend --no-edit`........Forgot to add a file to the commit (DOESNOT edit the message)     
 
-`git remote set-url origin git@github.com:uname/BASIC.git` ........ Updates the existing 'origin' remote to point to your fork
+`git remote set-url origin git@github.com:uname/BASIC.git` ........ Updates the existing 'origin' remote to point to your fork     
 `git remote add origin git@github.com:uname/BASIC.git`........ Adds a new 'origin' remote pointing to your fork   
 </details>   
 
