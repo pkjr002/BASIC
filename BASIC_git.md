@@ -98,7 +98,7 @@ git commit -m "Remove original folder from Branch A"
 
 ### Delete a file that was previously tracked and pushed to gitHub   
 
-> :rotating_red_light: This workflow rewrites history — if anyone else has cloned the repo, they’ll need to re-clone or force reset.   
+> :rotating_light: This workflow rewrites history — if anyone else has cloned the repo, they’ll need to re-clone or force reset.   
 
 1. make sure you have `git filter-repo` (modern replacement for `filter-branch`)    
     ```
