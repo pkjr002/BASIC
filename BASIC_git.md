@@ -33,8 +33,8 @@
 `git commit --amend -m`...............Change the commit message, NO staged changes can be present    
 `git commit --amend --no-edit`........Forgot to add a file to the commit (DOESNOT edit the message)     
 
-`git remote set-url origin git@github.com:uname/facts.git` ........ update the remote to point to your fork
-
+`git remote set-url origin git@github.com:uname/BASIC.git` ........ Updates the existing 'origin' remote to point to your fork
+`git remote add origin git@github.com:uname/BASIC.git`........ Adds a new 'origin' remote pointing to your fork   
 </details>   
 
 <br><br>
@@ -96,7 +96,40 @@ git rm -r <path-to-folder>    # Use -r if it's a folder
 git commit -m "Remove original folder from Branch A"
 ```
 
+### Delete a file that was previously tracked and pushed to gitHub   
+
+> :rotating_red_light: This workflow rewrites history — if anyone else has cloned the repo, they’ll need to re-clone or force reset.   
+
+1. make sure you have `git filter-repo` (modern replacement for `filter-branch`)    
+    ```
+    brew install git-filter-repo    #macOS 
+    OR
+    pip install git-filter-repo     #linux
+    ```
+
+1. Run command to remove the file     
+    This removes all traces of the file from history.
+    ```
+    git filter-repo --force --path path/to/your/file --invert-paths
+    ```
+      _Replace `path/to/your/file` with the correct path (relative to repo root)._     
+
+1. If pushed this repo to GitHub, need to force push    
+    ```
+    git push origin --force --all
+    git push origin --force --tags
+    ```     
+
+1. Cleanup reflogs
+    ```
+    rm -rf .git/logs
+    git gc --prune=now --aggressive
+    ```
+
 <br>
+
+
+
 
 <details>
 <summary> A list of more higher-level operations : </summary>
