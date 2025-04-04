@@ -78,7 +78,7 @@ tar -czf my_dir.tar.gz my_dir
   # variable format 
   REMOTE_USER="uname"
   REMOTE_HOST="amarel.rutgers.edu" 
-  REMOTE_PATH="/scratch/$(REMOTE_USER)/FACTS"
+  REMOTE_PATH="/scratch/${REMOTE_USER}/FACTS"
 
   FILES=(
     facts.install.amarel_incomplete.md
