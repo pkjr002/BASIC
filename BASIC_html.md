@@ -108,6 +108,7 @@ shorthand `<span style="font-size: 12pt; font-family: 'Times New Roman'; color: 
 
 # Horizontal Line
 ```
+<p style="background-color: blue;"> . </p>
 <hr style="border: none; height: 2px; background-color: none; border-style: dotted;">
 ```
 ### Line-Highlighting
