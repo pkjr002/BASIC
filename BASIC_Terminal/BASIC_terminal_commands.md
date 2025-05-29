@@ -120,6 +120,20 @@ ps -ef | grep
 ```
 
 
+ps -eo pid,ppid,cmd,%cpu,%mem --sort=-%cpu | grep python
+
+ps -eo pid,ppid,cmd,%cpu,%mem --sort=-%cpu > ps_snapshot4.txt
+
+sstat -j <JOBID>.batch -o "JobID,MaxRSS,AveCPU,MaxDiskRead,MaxDiskWrite"
+scontrol show job <JOBID>
+
+
+
+## Docker
+nproc
+cat /proc/cpuinfo | grep processor | wc -l
+
+
 ## Automate
 `cron     `............................Daemon to execute scheduled commands  
 `crontab  `............................Schedule a command to run at a later time  
