@@ -28,7 +28,9 @@ Tool that groups multiple files and folders into a single file. Note, it does no
 Create a compressed tarball of the contents of `/path/to/the/folder/archive`
 ```
 tar -cvf archive.tar -C /path/to/the/folder archive
-```  
+```    
+If you’re sitting in the parent directory of a folder called `archive` you can use `tar -cvf archive.tar archive`    
+
 <details>
 <summary> <i>Flags:</i>   </summary>   
 
