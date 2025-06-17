@@ -99,17 +99,10 @@ tar -czf my_dir.tar.gz my_dir
 </details>
 
 
-
-
-
 <br>
 
-## (**NEW**) Fast transfer of `*tgz` (Amarel to home directory).    
-  1. `rsync` is a powerful tool for file transfers, especially for synchronizing files and directories between two locations. Using `rsync` with `compression` and `SSH` can speed up the transfer.  
-  
-      ```
-      rsync -avzP --progress /path/to/source user@remote_host:/path/to/destination 
-      ````  
+
+##  `Fast` file transfer (Amarel to home directory).    
 
   1. `scp`  
       ```
@@ -122,6 +115,27 @@ tar -czf my_dir.tar.gz my_dir
       ```
       
 <br><br>
+
+
+## `Backup / Sync` (Amarel to home directory).    
+  1. `rsync` is a powerful tool for file transfers, especially for synchronizing files and directories between two locations. Using `rsync` with `compression` and `SSH` can speed up the transfer.  
+  
+      ```
+      rsync -avzP --progress /path/to/source user@remote_host:/path/to/destination 
+      ````  
+      Here are some actual usecases
+      * ```rsync -avzP --exclude '._*' pk@amarel.rutgers.edu:/scratch/pk/NJ_STAP_report ./``` when the pwd is `/Volumes/geekBoi/werk/amarel/scratch:pk` and there is a folder `NJ_STAP_report`.      
+      <br>
+      * `rsync -avzP --exclude '._*' pk@amarel.rutgers.edu:/scratch/pk/FACTS/2024.08.NJ ./`       
+
+      <br>
+
+      > Note that the `'._*'`  is to delete files that start with a dot and an underscore (e.g., ._filename)> These are called "AppleDouble" or "dot-underscore" files. These are created by macOS when copying files to filesystems that do not support macOS extended attributes or resource forks (such as FAT32, exFAT, or NTFS, which are common on external drives)
+
+      <b>NOTE:</b> If the `._*` files still persist, then cd into the PD and use `find ./ -name '._*' -delete` to delete.      
+     
+      <br>
+
 
 # Load python 
 ```
