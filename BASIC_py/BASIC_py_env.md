@@ -54,3 +54,20 @@ Managed by Anaconda/Miniconda, useful for scientific computing.
 
 ### Install the environment's Jupyter kernel:    
 `python -m ipykernel install --user --name=envname`
+
+
+
+### Unformatted
+
+```
+conda create -n plot_M2nu -c conda-forge python=3.12 \
+    numpy pandas scipy xarray bottleneck \
+    matplotlib seaborn ipykernel jupyterlab \
+    netCDF4 h5netcdf
+```
+
+conda activate plot_M2nu
+
+python -m ipykernel install --user --name=plot_M2nu --display-name "Python (plot_M2nu)"
+
+conda install -c conda-forge netCDF4 h5netcdf
