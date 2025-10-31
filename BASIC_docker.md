@@ -1,5 +1,31 @@
 ### 101 Docker
 
+**To be run from within the container**
+```  
+for pid in $(pgrep -f python); do
+  echo "PID: $pid"
+  echo "CMD: $(cat /proc/$pid/cmdline | tr '\0' ' ')"
+  echo "CWD: $(readlink /proc/$pid/cwd)"
+  echo "EXE: $(readlink /proc/$pid/exe)"
+  echo "------------------------------------"
+done
+
+```
+
+```  
+watch -n 5 'echo "==== PID 17479 Status ===="; ps -p 17479 -o pid,etime,pcpu,pmem,stat,cmd; echo; cat /proc/17479/io; echo "==========================="'
+
+```
+
+
+
+`docker system df` ................ Disk Useage
+
+`docker system df` ................ Disk Useage
+
+
+
+
 `docker system df` ................ Disk Useage
 
 `docker build -t <image_name> .` ................Build an image from a Dockerfile
