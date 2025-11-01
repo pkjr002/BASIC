@@ -1,23 +1,49 @@
-### 101 Docker
+# 101 Docker 
 
-**To be run from within the container**
-```  
-for pid in $(pgrep -f python); do
-  echo "PID: $pid"
-  echo "CMD: $(cat /proc/$pid/cmdline | tr '\0' ' ')"
-  echo "CWD: $(readlink /proc/$pid/cwd)"
-  echo "EXE: $(readlink /proc/$pid/exe)"
-  echo "------------------------------------"
-done
+  <br>
+
+## Quick commands for `Linux containers ONLY`
+To be run from within the container :bulb: on docker `toolbar` look for **Exec** tab.
+
+1. Check details of the exact process that is running:
+
+  ```  
+  pgrep -f python | while read -r pid; do
+    [ -r "/proc/$pid/cmdline" ] || continue
+
+    cmd=$(tr '\0' ' ' < "/proc/$pid/cmdline")
+    cwd=$(readlink "/proc/$pid/cwd" 2>/dev/null || echo "N/A")
+    exe=$(readlink "/proc/$pid/exe" 2>/dev/null || echo "N/A")
+
+    printf 'PID: %s\nCMD: %s\nCWD: %s\nEXE: %s\n%s\n' \
+      "$pid" "$cmd" "$cwd" "$exe" "------------------------------------"
+  done
 
 ```
 
-```  
-watch -n 5 'echo "==== PID 17479 Status ===="; ps -p 17479 -o pid,etime,pcpu,pmem,stat,cmd; echo; cat /proc/17479/io; echo "==========================="'
+  Then, to inspect the task, use the `PID`.    
+  :bulb: Edit the command below (add your `<YOUR PID>`) in a notepad. The docker **Exec** terminal can be hard to edit in.   
 
-```
+  ```  
+  watch -n 5 --color '
+    PID=<YOUR PID>
+    echo "==== PID $PID ($(date "+%F %T")) ===="
+    ps -p $PID -o pid,ppid,etime,stat,pcpu,pmem,cmd
+    echo
+    { echo "FDs: $(ls -1 /proc/$PID/fd 2>/dev/null | wc -l)"; } || true
+    awk "/^(Threads|State|VmRSS|VmHWM|voluntary_ctxt_switches|nonvoluntary_ctxt_switches):/ {print}" /proc/$PID/status 2>/dev/null
+    echo
+    echo "--- /proc/$PID/io ---"
+    cat /proc/$PID/io 2>/dev/null || echo "(no permission)"
+    echo "==========================="
+  '
+  ```
+  <br>
 
 
+
+
+### General Docker Commands
 
 `docker system df` ................ Disk Useage
 
@@ -36,7 +62,11 @@ watch -n 5 'echo "==== PID 17479 Status ===="; ps -p 17479 -o pid,etime,pcpu,pme
 `docker start -ai <container_#>`    
 `docker rm <container_id>`    
 
-### Free Up Space
+
+### Free Up Space (🚨 not for noobs, use at own risk)        
+🏗️ This part is work in progress.      
+> 🚨 I have accidentally deleted containers so PLEASE read and understand before you use.            
+
 
 * Remove Unused <b>Containers</b>
     ```
