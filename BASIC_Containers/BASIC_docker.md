@@ -62,6 +62,25 @@ To be run from within the container :bulb: on docker `toolbar` look for **Exec**
 `docker start -ai <container_#>`    
 `docker rm <container_id>`    
 
+  <br>
+
+
+### Set `RAM` and `CPU`.     
+To check the details :
+```
+nproc               # Should show 24
+free -h             # See 24 GB memory + 8 GB swap
+``` 
+
+If you are running on windows, use the (`C:\Users\UNAME\.wslconfig`). 
+```
+[wsl2]
+memory=24GB
+processors=24
+swap=8GB
+localhostForwarding=true
+```
+
 
 ### Free Up Space (🚨 not for noobs, use at own risk)        
 🏗️ This part is work in progress.      
