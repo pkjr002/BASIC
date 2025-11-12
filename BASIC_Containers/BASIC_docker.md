@@ -41,6 +41,27 @@ To be run from within the container :bulb: on docker `toolbar` look for **Exec**
   <br>
 
 
+### Copy a Docker volume to local storage
+  1. Copy volume to the host folder.
+  ```
+  docker run --rm \
+    -v temp_sandbox:/src \
+    -v /Users/uname/exports/sessions:/dst \
+    alpine sh -c 'cp -a /src/. /dst/'
+  ```
+
+  1. Copy volume to the host folder.
+  ```
+  docker run --rm \
+    -v temp_sandbox:/src \
+    -v /Users/uname/exports/sessions:/dst \
+    alpine sh -c 'mkdir -p /dst && cp -a /src/re.session.* /dst/'
+  ```
+
+  <br>
+
+
+
 
 
 ### General Docker Commands
