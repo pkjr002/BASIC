@@ -13,17 +13,17 @@
 
       <summary> <em>Follow the steps below</em> </summary>    
                 
-        1. Stash your uncommitted changes (including untracked files)
-        ```git stash push -u -m "temp-changes"```
+      1. Stash your uncommitted changes (including untracked files)  
+      ```git stash push -u -m "temp-changes"```
 
-        1. Revert the last local commit (permanently delete it)
-        ```git reset --hard HEAD~1```
+      1. Revert the last local commit (permanently delete it)  
+      ```git reset --hard HEAD~1```
 
-        1. Pull the latest changes from the remote branch
-        ```git pull```
+      1. Pull the latest changes from the remote branch  
+      ```git pull```
 
-        1. Reapply your stashed changes
-        ```git stash pop```
+      1. Reapply your stashed changes  
+      ```git stash pop```
 
       </details>
 
@@ -31,36 +31,36 @@
 
   
 
-1. <b><u>Make your `main` mirror the Original `main`</u></b>
-  i.e. Keep your fork `main` identical to the original repo `main`
-  <br>
-    
-    <details>
+1. <b><u>Make your `main` mirror the Original `main`</u></b>  
+  i.e.
+    - Keep your fork `main` identical to the original repo `main`  
+    <br>
+  
+      <details>  
 
-    <summary> <em>Follow the steps below</em> </summary>    
+      <summary> <em>Follow the steps below</em> </summary>    
                 
-      1. Add the original repo as a remote
-      ```git remote add upstream https://github.com/original/repo.git```
+      1. Add the original repo as a remote  
+      ```git remote add upstream https://github.com/original/repo.git```  
 
-      1. Fetch the latest from the original repo
+      1. Fetch the latest from the original repo  
       ```git fetch upstream```
 
-      1. Reset your `main` branch to match upstream   
+      1. Reset your `main` branch to match upstream     
       ```git checkout main```
       ```git reset --hard upstream/main```
 
-      1. Force push to update your fork on GitHub
+      1. Force push to update your fork on GitHub   
       ```git push origin main --force```
     
-    <br>
-    :bulb: keep your main in sync in the future
-    ```
-    git fetch upstream
-    git checkout main
-    git reset --hard upstream/main
-    git push origin main --force
-    ```
+      
+      :bulb: keep your main in sync in the future    
+      ```
+      git fetch upstream
+      git checkout main
+      git reset --hard upstream/main
+      git push origin main --force
+      ```
+      </details>
 
-    </details>
-
-    <br><br>
+      <br><br>
