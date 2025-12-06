@@ -24,6 +24,80 @@ Tool that groups multiple files and folders into a single file. Note, it does no
 * __Compression__: While tar itself does not compress files, it is often used in combination with compression tools like `gzip` or `bzip2` to both archive and compress files in one step.  
 <br>
 
+   <details>
+     <summary><mark>Understand <code>-C /path/to/the/folder archive</code></mark></summary>
+     
+     <br>
+
+     1. Your filesystem before running <code>tar</code>:
+     
+        ```text
+        /
+        └── path
+            └── to
+                └── the
+                    └── folder
+                        ├── archive
+                        │   ├── file1.txt
+                        │   ├── file2.csv
+                        │   └── subdir
+                        │       └── notes.md
+                        └── something_else.txt
+        ```
+
+        So <code>/path/to/the/folder</code> contains:
+        - a directory: <code>archive/</code>  
+        - a file: <code>something_else.txt</code>
+        <br>
+
+     2. What <code>tar</code> sees with <code>-C /path/to/the/folder</code>
+        The command:
+
+        ```
+        tar -cvjf archive.tar.bz2 -C /path/to/the/folder archive
+        ```
+
+        means:
+        - Change directory to <code>/path/to/the/folder</code>  
+        - Then archive the <code>archive</code> directory (and its contents)
+
+        From tar’s point of view, after <code>-C /path/to/the/folder</code>, it sees:
+
+        ```
+        .
+        ├── archive
+        │   ├── file1.txt
+        │   ├── file2.csv
+        │   └── subdir
+        │       └── notes.md
+        └── something_else.txt
+        ```
+
+        But you only tell it to include <code>archive</code>, so the contents of <code>archive.tar.bz2</code> look like:
+
+        ```
+        archive/
+        ├── file1.txt
+        ├── file2.csv
+        └── subdir/
+            └── notes.md
+        ```
+
+        The file <code>something_else.txt</code> is not included because you didn’t list it in the command.
+        
+        ```
+        tar -cvjf archive.tar.bz2 -C ./ archive
+        same as
+        tar -cvjf archive.tar.bz2 archive
+        ```
+
+        when you are already in the directory that contains <code>archive/</code>.
+        <br>
+   </details>
+   
+   <br>
+
+
 `Create` an archive:   
 Create a compressed tarball of the contents of `/path/to/the/folder/archive`
 ```
