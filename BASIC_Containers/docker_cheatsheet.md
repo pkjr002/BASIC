@@ -11,6 +11,13 @@ docker version
 docker info
 ```
 
+  <br>
+
+To kill the docker deamon (using terminal) on,
+  - Mac `killall "Docker Desktop"`
+  - Windows `Get-Process "Docker Desktop" | Stop-Process -Force`
+  - Linux, to <mark>restart</mark>  `sudo systemctl restart docker.socket docker.service`
+
 ---
 
 ## 1) Containers (run, list, stop, remove)
