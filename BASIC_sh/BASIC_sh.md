@@ -129,7 +129,7 @@ tar -xvf archive.tar
 <br>
 
 
-## Copy Synchronizing of File/directories     
+## Copy/Synchronizing of File/directories     
 `rsync` is a powerful, efficient tool for synchronizing files and directories between two locations. It’s widely used for backups, file transfers, and mirroring data across systems, both locally and remotely
 
 copy excluding folders  
@@ -141,7 +141,6 @@ Note that the folder  `folder` will be copied to `path/to/folder path/to/destina
 rsync -av --delete folder/ /scratch/usr/folder/
 ```
 
-##### Command Breakdown:
 <details>
 <summary> Flag/Variable Description </summary>
 
@@ -150,7 +149,7 @@ rsync -av --delete folder/ /scratch/usr/folder/
 `--delete:` Deletes files in the destination (`/scratch/usr/folder/`) that do not exist in the source (`folder/`).    
 `folder/:` The source directory you are syncing from.      
 `/scratch/usr/folder/:` The destination directory where you are syncing the contents of `folder/`.      
-</details>    
+    
 <br>
 
 1. Copies the content of `folder/` (including subdirectories and files) to the destination `/scratch/usr/folder/`.    
@@ -169,6 +168,68 @@ rsync -av --delete folder/ /scratch/usr/folder/
 Synchronize the contents of `folder/` with `/scratch/usr/folder/`.   
 Delete files inside `/scratch/usr/folder/` that do not exist in `folder/`.
 It will not delete `/scratch/usr/` itself or any files outside the` /scratch/usr/folder/` directory.
+
+</details>
+<br>
+
+1. ### RSYNC  
+
+    <details>
+    <summary> Destination keeps anything it has and adds the new file (no mirroring).  </summary>  
+
+    ```
+    SRC="/path/to/source/"
+    DST="/path/to/destination/"
+
+    # Append a dated header to destination log.md
+    {
+    echo ""
+    echo "## Backup $(date -u '+%Y-%m-%d %H:%M:%SZ')"
+    } >> "$DST/log.md"
+
+    # Run rsync and append output to the same log
+    rsync -avh --partial --stats \
+    --exclude='.DS_Store' \
+    --exclude='._*' \
+    --exclude='*.tmp' \
+    "$SRC" "$DST" >> "$DST/log.md" 2>&1
+
+    ```
+    </details>
+
+    <br>
+
+1. ### Robocopy  
+
+    <details>
+    <summary> Use robocopy if you are on a windows system.    </summary>  
+
+    ```
+    robocopy "C:\path\to\source\" `
+            "D:\path\to\destination\" `
+            /E /Z /MT:16 /R:2 /W:5 /COPY:DAT /DCOPY:T /FFT /XJ `
+            /XD '$RECYCLE.BIN' 'System Volume Information' `
+            /NP /NDL /NFL /TEE /LOG+:"D:\path\to\destination\backup_log.txt"
+    ```
+    </details>
+
+
+    <details>
+    <summary> Robocopy with variable paths  </summary>   
+
+    ```
+    $SRC = "C:\path\to\source\"
+    $DST = "D:\path\to\destination\"
+    $LOG = Join-Path $DST "backup_log.txt"
+    #
+    robocopy $SRC $DST /E /Z /MT:16 /R:2 /W:5 `
+    /COPY:DAT /DCOPY:T /FFT /XJ `
+    /XD '$RECYCLE.BIN' 'System Volume Information' `
+    /NP /NDL /NFL /TEE /LOG+:$LOG
+
+    ```    
+    </details>
+
 <br><br>
 
 ## File Comparison    
