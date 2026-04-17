@@ -12,6 +12,17 @@
 
 ---
 
+## Prompt Formulation \& optimization. 
+  1. OpenAI [prompt optimization](https://developers.openai.com/api/docs/guides/prompt-optimizer)
+  1. Use the dedicated openAI prompt optimizer. 
+  1. Cave Man
+  1.  Command LLM with rules like: "Short sentences only (3-6 words)," "No filler/preamble," and "Tool first, result first, no explain."
+
+
+
+
+---
+
 ## Basic Prompt Formula
 
 
